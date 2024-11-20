@@ -1,0 +1,49 @@
+.heroImageSliderContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.imageSliderSlides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imageSliderHeroImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.imageSliderHeroImage.active {
+    opacity: 1;
+}
+
+.bannerText {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+   
+}
+
+.imageSliderDots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Add any additional styles from astro369.com as needed */
+
+.bannerText h1 {
+    font-size: 26px;
+}

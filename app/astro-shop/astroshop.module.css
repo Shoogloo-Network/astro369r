@@ -1,0 +1,934 @@
+/* 2 Level Drop Down */
+
+
+
+/* Main Layout */
+.astroShopProduct {
+  display: flex;
+  margin-top: 10px;
+  padding: 15px 40px;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  position: relative;
+}
+
+/* Product Card */
+.astroShopProductList {
+  text-align: center;
+  position: relative;
+  width: 134px;
+  transition: transform 0.3s;
+  color: #414146;
+}
+
+/* .astro-shop-product-list:hover {
+  transform: translateY(-5px);
+} */
+
+/* Product Image */
+.productImage {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  /* border-radius: 5px; */
+}
+
+/* Product Title */
+
+
+.astroShopProductList p span {
+ 
+  color: #777;
+  cursor: pointer;
+}
+
+/* Main and Sub Menus - Initially Hidden */
+.astroShopMainMenu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  left: 24px;
+  width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.astroShopSubMenu {
+  display: none;
+  position: absolute;
+  width: 100px;
+  background-color: #fff;
+  left: 120px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.astroShopSubMenu2 {
+  display: none;
+  position: absolute;
+  width: 100px;
+  background-color: #fff;
+  left: 120px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+
+
+/* Main Menu Styling */
+.astroShopMainMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.astroShopMainMenu ul li {
+  background-color: #fff;
+  padding: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.astroShopMainMenu ul li:hover {
+  background-color: #f7c1c1;
+}
+
+/* Sub Menu Styling */
+.astroShopSubMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.astroShopSubMenu2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.astroShopSubMenu ul li {
+  background-color: #fff;
+  padding: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.astroShopSubMenu2 ul li {
+  background-color: #fff;
+  padding: 8px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.astroShopSubMenu ul li:hover {
+  background-color: #c1d3f7;
+}
+
+.astroShopSubMenu2 ul li:hover {
+  background-color: #c1d3f7;
+}
+
+
+
+
+/* Card Content */
+.cardContent {
+  padding-top: 10px;
+  padding-left: 8px;
+  padding-right: auto;
+}
+
+.cardTitle {
+  padding-bottom: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2d2d32;
+}
+
+.cardDescription {
+  font-weight: 400;
+  color: #787887;
+  font-size: 13px;
+}
+
+.cardCarousel {
+
+  width: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+  margin-bottom: 20px;
+
+}
+
+.cardContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  outline: none;
+}
+
+.card {
+  min-width: 25%;
+  width: 290px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: white;
+
+  margin: 10px;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card>h1 {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #414146;
+}
+
+.card>h1:hover {
+  color: #007BFF;
+}
+
+.card>p {
+  color: #414146;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+
+  color: #34422d;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(51, 60, 63, .22);
+}
+
+button.prev {
+  left: 0;
+}
+
+button.next {
+  right: 0;
+}
+
+
+.appointmentSection {
+  
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.appointmentSection>h1 {
+  font-weight:bold;
+
+  color: #414146;
+  
+
+}
+
+
+
+.appointmentSection>p {
+  margin-top: 5px;
+
+  line-height: 1.5;
+  color: #414146;
+  font-weight: 400;
+}
+
+.underlinePrice{
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.price{
+  font-weight: bold;
+
+}
+
+
+
+/* Astro Mart Filter */
+
+
+/* Styling the mart-filter */
+.martFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #f8f8f8;
+  border-bottom: 2px solid #ddd; */
+  margin-bottom: 20px;
+}
+
+.martFilter > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left section: Filter title and product count */
+.martFilter div:first-child {
+  /* display: flex; */
+  flex-direction: column;
+}
+
+.martFilter div:first-child span:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.martFilter div:first-child span:last-child {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Right section: Sort options */
+.martFilter div:last-child {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  align-items: center;
+}
+
+.martFilter div:last-child li {
+  cursor: pointer;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-size: 14px;
+}
+
+.martFilter div:last-child li:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.martFilter div:last-child li:first-child {
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.martFilter div:last-child li:first-child:hover{
+  font-weight: bold;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+
+
+/* Style for the selected filter option */
+.activeFilter {
+  background-color: #007BFF !important;
+  color: white; /* Optional: makes text more readable */
+}
+
+.filterOptionDiv{
+  display: flex;
+  flex-direction: row !important;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  button.prev{
+      display: none;
+  }
+  button.next{
+      display: none;
+  }
+  .cardCarousel {
+      overflow-x: scroll;
+  }
+  .martFilter div:last-child li{
+font-size: 12px;
+padding: 10px 4px;
+  }
+  .martFilter div:last-child {
+      gap: 5px;
+   
+      
+  }
+  .martFilter{
+      padding: 2px;
+  }
+}
+
+.productDisplay {
+padding: 20px;
+}
+
+.sortingSection {
+margin-bottom: 20px;
+padding: 10px;
+background: #f5f5f5;
+}
+
+.sortingSection button {
+margin: 0 10px;
+padding: 5px 15px;
+border: none;
+background: none;
+cursor: pointer;
+}
+
+.sortingSection button.active {
+color: #007bff;
+font-weight: bold;
+}
+
+.productsGrid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.productCard {
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 8px;
+text-align: center;
+}
+
+.productCard img {
+width: 100%;
+height: auto;
+}
+
+.sliderContainer {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+.cardContainer {
+overflow: hidden;
+}
+
+.cardWrapper {
+display: flex;
+width: 100%;
+}
+
+.card {
+flex: 0 0 25%;
+padding: 10px;
+}
+
+.sliderButton {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0,0,0,0.5);
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+z-index: 1;
+}
+
+.sliderButton:first-child {
+left: 0;
+}
+
+.sliderButton:last-child {
+right: 0;
+}
+
+.astroShopContainer {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.filterSection {
+margin-bottom: 30px;
+padding: 15px;
+background: #f8f8f8;
+border-radius: 8px;
+}
+
+.filterHeader {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.productCount {
+margin-left: 10px;
+color: #666;
+font-size: 0.9em;
+}
+
+.sortOptions {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.sortButton {
+padding: 8px 15px;
+border: none;
+background: none;
+cursor: pointer;
+font-size: 14px;
+color: #333;
+transition: all 0.3s ease;
+}
+
+.sortButton:hover {
+color: #007bff;
+}
+
+.sortButton.active {
+color: #007bff;
+font-weight: bold;
+}
+
+.productsGrid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+gap: 20px;
+margin-bottom: 30px;
+}
+
+.productCard {
+border: 1px solid #eee;
+border-radius: 8px;
+padding: 15px;
+transition: transform 0.3s ease;
+}
+
+.productCard:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.productImage {
+width: 100%;
+aspect-ratio: 1;
+overflow: hidden;
+border-radius: 4px;
+}
+
+.productImage img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.productInfo {
+padding: 10px 0;
+text-align: center;
+}
+
+.productInfo h3 {
+margin: 10px 0;
+font-size: 16px;
+color: #333;
+}
+
+.priceInfo {
+display: flex;
+justify-content: center;
+gap: 10px;
+align-items: center;
+}
+
+.currentPrice {
+font-size: 18px;
+font-weight: bold;
+color: #007bff;
+}
+
+.originalPrice {
+text-decoration: line-through;
+color: #999;
+font-size: 14px;
+}
+
+.pagination {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+margin-top: 30px;
+}
+
+.pageButton {
+padding: 8px 15px;
+border: 1px solid #ddd;
+border-radius: 4px;
+background: white;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+background: #007bff;
+color: white;
+border-color: #007bff;
+}
+
+.pageButton:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+.pageNumber {
+font-weight: bold;
+color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.filterHeader {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sortOptions {
+  flex-wrap: wrap;
+}
+
+.productsGrid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+}
+
+/* Navigation Styles */
+.astroNav {
+position: relative;
+}
+
+.mainMenuItem {
+cursor: pointer;
+padding: 10px;
+}
+
+.mainMenu {
+position: absolute;
+top: 100%;
+left: 0;
+background: white;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+z-index: 100;
+}
+
+.subMenu {
+position: absolute;
+left: 100%;
+top: 0;
+background: white;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Slider Styles */
+.productSlider {
+position: relative;
+width: 100%;
+margin: 2rem 0;
+overflow: hidden;
+}
+
+.sliderContainer {
+overflow: hidden;
+margin: 0 40px;
+}
+
+.sliderTrack {
+display: flex;
+flex-wrap: nowrap;
+}
+
+.sliderItem {
+flex-shrink: 0;
+}
+
+.sliderButton {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 1rem;
+cursor: pointer;
+z-index: 2;
+}
+
+.sliderButton:disabled {
+background: rgba(0, 0, 0, 0.2);
+cursor: not-allowed;
+}
+
+.prevButton {
+left: 0;
+}
+
+.nextButton {
+right: 0;
+}
+
+.astroProductContainer {
+width: 100%;
+position: relative;
+}
+
+.categoryNav {
+position: relative;
+z-index: 100;
+}
+
+.categoryItem {
+position: relative;
+cursor: pointer;
+}
+
+.categoryHeader {
+display: flex;
+align-items: center;
+padding: 10px;
+background: white;
+}
+
+.categoryHeader img {
+width: 24px;
+height: 24px;
+margin-right: 10px;
+}
+
+.mainCategoryMenu {
+position: absolute;
+left: 100%;
+top: 0;
+background: white;
+box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+min-width: 200px;
+}
+
+.mainCategoryItem {
+padding: 10px;
+position: relative;
+}
+
+.mainCategoryItem:hover {
+background: #f5f5f5;
+}
+
+.subCategoryMenu {
+position: absolute;
+left: 100%;
+top: 0;
+background: white;
+box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+min-width: 200px;
+}
+
+.subCategoryItem {
+padding: 10px;
+position: relative;
+}
+
+.subCategoryItem:hover {
+background: #f5f5f5;
+}
+
+.itemsMenu {
+position: absolute;
+left: 100%;
+top: 0;
+background: white;
+box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+min-width: 200px;
+}
+
+.menuItem {
+padding: 10px;
+}
+
+.menuItem:hover {
+background: #f5f5f5;
+}
+
+/* Product Slider Styles */
+.productSlider {
+margin-top: 20px;
+position: relative;
+overflow: hidden;
+}
+
+.sliderContainer {
+position: relative;
+width: 100%;
+margin: 20px 0;
+overflow: hidden;
+}
+
+.sliderWrapper {
+overflow: hidden;
+padding: 10px;
+}
+
+.sliderTrack {
+display: flex;
+width: 100%;
+}
+
+.sliderCard {
+flex: 0 0 calc(100% / 4); /* Show 4 cards at once */
+padding: 10px;
+transition: transform 0.3s ease;
+}
+
+.sliderCard:hover {
+transform: translateY(-5px);
+}
+
+.cardImage {
+position: relative;
+width: 100%;
+padding-bottom: 100%; /* 1:1 Aspect ratio */
+overflow: hidden;
+border-radius: 8px;
+}
+
+.cardImage img {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.newBadge {
+position: absolute;
+top: 10px;
+right: 10px;
+background: #ff4444;
+color: white;
+padding: 4px 8px;
+border-radius: 4px;
+font-size: 12px;
+}
+
+.cardContent {
+padding: 10px 0;
+}
+
+.cardContent h3 {
+margin: 0;
+font-size: 16px;
+color: #333;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.priceContainer {
+margin: 8px 0;
+}
+
+.discountedPrice {
+font-size: 18px;
+font-weight: bold;
+color: #ff4444;
+margin-right: 8px;
+}
+
+.originalPrice {
+text-decoration: line-through;
+color: #999;
+font-size: 14px;
+}
+
+.rating {
+color: #ffd700;
+font-size: 14px;
+}
+
+.reviews {
+color: #666;
+margin-left: 4px;
+}
+
+.sliderButton {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+cursor: pointer;
+z-index: 2;
+transition: background 0.3s ease;
+}
+
+.sliderButton:hover:not(:disabled) {
+background: rgba(0, 0, 0, 0.8);
+}
+
+.sliderButton:disabled {
+opacity: 0.3;
+cursor: not-allowed;
+}
+
+.prevButton {
+left: 10px;
+}
+
+.nextButton {
+right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+.sliderCard {
+  flex: 0 0 calc(100% / 3); /* Show 3 cards on tablets */
+}
+}
+
+@media (max-width: 768px) {
+.sliderCard {
+  flex: 0 0 calc(100% / 2); /* Show 2 cards on mobile */
+}
+}
+
+@media (max-width: 480px) {
+.sliderCard {
+  flex: 0 0 100%; /* Show 1 card on small mobile */
+}
+}
+
+/* Add more styles as needed */

@@ -1,0 +1,72 @@
+
+@media (max-width: 1024px) {
+    .prev, .next {
+        width: 50px;
+        height: 50px;
+        top: 100px;
+    }
+
+    .card-carousel {
+        width: 80%;
+    }
+
+    .astrologer-container {
+        margin: 8px;
+    }
+
+    .astrologer-image {
+        width: 100px;
+    }
+
+    .txtsize1 {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .prev, .next {
+        width: 40px;
+        height: 40px;
+        top: 80px;
+    }
+
+    .card-carousel {
+        width: 90%;
+    }
+
+    .astrologer-container {
+        margin: 6px;
+    }
+
+    .astrologer-image {
+        width: 80px;
+    }
+
+    .txtsize1 {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .prev, .next {
+        width: 30px;
+        height: 30px;
+        top: 60px;
+    }
+
+    .card-carousel {
+        width: 100%;
+    }
+
+    .astrologer-container {
+        margin: 4px;
+    }
+
+    .astrologer-image {
+        width: 60px;
+    }
+
+    .txtsize1 {
+        font-size: 0.7em;
+    }
+}

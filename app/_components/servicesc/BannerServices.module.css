@@ -1,0 +1,125 @@
+.divStyle {
+    background-image: url(/bannerServices.jpg);
+    background-size: cover;  /* Ensures the image covers the entire element */
+    background-position: center;
+    width: 100%;  /* Example width */
+    height: 400px;  /* Example height */
+}
+
+@media (max-width: 768px) {
+    .divStyle {
+        height: 400px;  /* Adjust height for smaller screens */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .divStyle {
+        height: 200px;  /* Adjust height for mobile screens */
+    }
+}
+
+.divStyle2 {
+    width: 40%;
+    padding-top: 80px;
+    margin-left: 106px;
+}
+
+@media (max-width: 768px) {
+    .divStyle2 {
+        width: 60%;  /* Adjust width for smaller screens */
+        margin-left: 50px;  /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .divStyle2 {
+        width: 80%;  /* Adjust width for mobile screens */
+        margin-left: 20px;  /* Adjust margin for mobile screens */
+        padding-top: 40px;  /* Adjust padding for mobile screens */
+    }
+}
+
+.divStyle2H {
+    text-align: left;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: -1.5px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .divStyle2H {
+        font-size: 38px;  /* Adjust font size for smaller screens */
+        line-height: 40px;
+        text-align: center;  /* Adjust line height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .divStyle2H {
+        font-size: 32px;  /* Adjust font size for mobile screens */
+        line-height: 40px;  /* Adjust line height for mobile screens */
+    }
+}
+
+.divStyle2P {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: .15px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .divStyle2P {
+        font-size: 16px;  /* Adjust font size for smaller screens */
+        line-height: 22px;
+        margin-bottom: 5px; 
+        text-align: center; /* Adjust line height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .divStyle2P {
+        font-size: 14px;  /* Adjust font size for mobile screens */
+        line-height: 20px;  /* Adjust line height for mobile screens */
+    }
+}
+
+.divStyle2Btn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    box-shadow: none;
+    width: 50%;
+    outline: none;
+    padding: 14px 5px;
+}
+
+@media (max-width: 768px) {
+    .divStyle2Btn {
+        width: 70%;  /* Adjust width for smaller screens */
+        padding: 12px 4px;
+        text-align: center; 
+        /* Adjust padding for smaller screens */
+    }
+    .combineDiv{
+        display:flex;
+         flex-direction:column;
+          align-items:center;
+           justify-content:center;
+            margin-bottom:'10px';
+    }
+}
+
