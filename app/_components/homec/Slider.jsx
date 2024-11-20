@@ -1,3 +1,4 @@
+'use client'
 // components/Slider.js
 import { useState, useEffect } from 'react';
 import styles from './Slider.module.css';

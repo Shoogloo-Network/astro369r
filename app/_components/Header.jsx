@@ -55,6 +55,7 @@ const menuCategories = [
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginMenuOpen, setIsLoginMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [showmenu , setShowmenu] = useState(false);
   const [dropdownStates, setDropdownStates] = useState({
@@ -63,7 +64,18 @@ const Header = () => {
   });
   const menuTimeoutRef = useRef(null);
   const loginMenuRef = useRef(null);
+  useEffect(() => {
+    const updateView = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
 
+    updateView(); // Initial check
+    window.addEventListener('resize', updateView);
+
+    return () => {
+      window.removeEventListener('resize', updateView);
+    };
+  }, []);
   // Close menus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -79,10 +91,13 @@ const Header = () => {
     };
   }, []);
 
+  
   const toggleMobileMenu = () => {
-    if (window.innerWidth <= 768) {
-      setIsMobileMenuOpen(!isMobileMenuOpen);
-      setShowmenu(!showmenu);
+    if (isMobileView) {
+      
+          setIsMobileMenuOpen(!isMobileMenuOpen);
+          setShowmenu(!showmenu);
+       
     }
   };
 
@@ -170,8 +185,8 @@ const Header = () => {
             <div className="menu-container-parent">
               <div className="security-container">
                 <select name="Security" id="Security" className="txtsize">
-                  <option value="" disabled selected hidden>ENG</option>
-                  <option value="DataSecurity" selected>ENG</option>
+                 
+                  <option value="DataSecurity" defaultValue={true} >ENG</option>
                   <option value="Help">HINDI</option>
                 </select>
               </div>
