@@ -132,13 +132,13 @@ const Header = () => {
           <div className="logo-container">
             <ul>
               <li><Link href="/advisors">All Advisors</Link></li>
-              <li><Link href="/consult">Video Consult</Link></li>
+              <li><Link href="/video-consult">Video Consult</Link></li>
               <li 
                 className="mega-hover"
                 onMouseEnter={() => setShowMegaMenu(true)}
                 onMouseLeave={() => setShowMegaMenu(false)}
               >
-                <Link href="#">Predictions</Link>
+                <Link href="astrology-readings">Predictions</Link>
                 {showMegaMenu && (
                   <section 
                     className="menu-section container"
