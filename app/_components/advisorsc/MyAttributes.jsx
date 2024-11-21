@@ -1,88 +1,53 @@
 'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-import AboutMe from '@/app/_components/advisorsc/AboutMe';
-import MyAttributes from '@/app/_components/advisorsc/MyAttributes';
-import RatingsReviews from '@/app/_components/advisorsc/RatingsReviews';
-import Pagination from '@/app/_components/advisorsc/Pagination';
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React, { useState } from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
-  };
+const MyAttributes = () => {
+  const [attributes, setAttributes] = useState({
+    languages: ['English', 'Hindi'],
+    skills: ['Clairvoyant', 'Empath', 'Medium', 'Angel Readings', 'Otherworld Connections'],
+    specialties: ['Love & Relationships', 'Career & Work', 'Money & Prosperity', 'Breakups & Divorce', 'Women\'s Issues'],
+    tools: ['Tarot', 'No Tools', 'Pendulum', 'Runes', 'Astrology - Western']
+  });
 
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
-  };
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-      <AboutMe/>
-      <MyAttributes/>
-      <RatingsReviews/>
-      <Pagination/>
-    </div>
+    <section className="myAttributes container">
+      <h1>My Attributes</h1>
+      <div className="attributes-card">
+        <div className="card">
+          <div><h1 className="profile-attr-col">Languages</h1></div>
+          <div className="column">
+            {attributes.languages.map((language, index) => (
+              <span key={index}><i className="fa-solid fa-heart"></i> {language}</span>
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <div><h1 className="profile-attr-col">Skills</h1></div>
+          <div className="column">
+            {attributes.skills.map((skill, index) => (
+              <span key={index}><i className="fa-solid fa-heart"></i> {skill}</span>
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <div><h1 className="profile-attr-col">Specialties</h1></div>
+          <div className="column">
+            {attributes.specialties.map((specialty, index) => (
+              <span key={index}><i className="fa-solid fa-heart"></i> {specialty}</span>
+            ))}
+          </div>
+        </div>
+        <div className="card">
+          <div><h1 className="profile-attr-col">Tools</h1></div>
+          <div className="column">
+            {attributes.tools.map((tool, index) => (
+              <span key={index}><i className="fa-solid fa-heart"></i> {tool}</span>
+            ))}
+          </div>
+        </div>
+      </div>
 
-
-
-
-
-
-
-
-
-<style jsx>{`
+      <style jsx>{`
 
 
 
@@ -978,8 +943,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default page
+export default MyAttributes;

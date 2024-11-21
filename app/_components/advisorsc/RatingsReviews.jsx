@@ -1,86 +1,81 @@
 'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-import AboutMe from '@/app/_components/advisorsc/AboutMe';
-import MyAttributes from '@/app/_components/advisorsc/MyAttributes';
-import RatingsReviews from '@/app/_components/advisorsc/RatingsReviews';
-import Pagination from '@/app/_components/advisorsc/Pagination';
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React, { useState } from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
+const RatingsReviews = () => {
+  const [reviews, setReviews] = useState([
+    {
+      username: 'User14811964',
+      date: '09/23/2024 - Call',
+      rating: 4.5,
+      comment: 'She knew everything about what was going on with my situation and said what I needed to hear.'
+    },
+    {
+      username: 'User04749717',
+      date: '09/22/2024 - Call',
+      rating: 2.5,
+      comment: "Sorry the call wasn't very long but thank you, the reading made sense for sure."
+    },
+    {
+      username: 'User745157',
+      date: '09/20/2024 - Chat',
+      rating: 2,
+      comment: 'Not very descriptive with her reading. Giving more advice and was very wasteful if you were to ask me. Could have been better!'
+    },
+    {
+      username: 'Karen1989',
+      date: '09/20/2024 - Call',
+      rating: 5,
+      comment: 'Impressive! 😳 She mentioned specific situations that I had never had the chance to share with her before. Her accuracy was remarkable, and both the reading and her insights were very encouraging. Thank you, Gracias Luciana! ✨'
+    },
+    {
+      username: 'User91582348',
+      date: '09/20/2024 - Chat',
+      rating: 2,
+      comment: 'Not sure how I feel about reading. She has seemed to be accurate in the past but also seems far off at times. Kinda seems to not give accurate reading, telling me to work on myself and figure things out.'
+    }
+  ]);
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    return (
+      <>
+        {[...Array(fullStars)].map((_, index) => (
+          <i key={index} className="fas fa-star"></i>
+        ))}
+        {halfStar && <i className="fas fa-star-half-alt"></i>}
+        {[...Array(emptyStars)].map((_, index) => (
+          <i key={index} className="far fa-star"></i>
+        ))}
+      </>
+    );
   };
 
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
-  };
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-      <AboutMe/>
-      <MyAttributes/>
-      <RatingsReviews/>
-      <Pagination/>
-    </div>
-
-
-
-
-
-
-
-
+    <section className="ratings-reviews container">
+      <h1>My Ratings & Reviews</h1>
+      <div className="rating-summary">
+        <div className="average-rating">
+          <span className="rating-value">4.5</span>
+          <span className="stars">
+            {renderStars(4.5)}
+          </span>
+          <div className="review-count">(3,857)</div>
+        </div>
+      </div>
+      
+      {reviews.map((review, index) => (
+        <div key={index} className="review">
+          <div className="username">{review.username}</div>
+          <div className="date">{review.date}</div>
+          <div className="stars">
+            {renderStars(review.rating)}
+          </div>
+          <div className="comment">{review.comment}</div>
+        </div>
+      ))}
 
 <style jsx>{`
 
@@ -978,8 +973,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default page
+export default RatingsReviews;

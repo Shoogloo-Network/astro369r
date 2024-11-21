@@ -1,88 +1,42 @@
 'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-import AboutMe from '@/app/_components/advisorsc/AboutMe';
-import MyAttributes from '@/app/_components/advisorsc/MyAttributes';
-import RatingsReviews from '@/app/_components/advisorsc/RatingsReviews';
-import Pagination from '@/app/_components/advisorsc/Pagination';
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React, { useState } from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
+const Pagination = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 6;
+
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
   };
 
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
+  const handlePrevClick = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
+
+  const handleNextClick = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-      <AboutMe/>
-      <MyAttributes/>
-      <RatingsReviews/>
-      <Pagination/>
-    </div>
+    <section className="pagination container">
+      <a href="#" className="prev" onClick={handlePrevClick}>« Previous</a>
+      {[...Array(totalPages)].map((_, index) => (
+        <a
+          key={index}
+          href="#"
+          className={`page ${currentPage === index + 1 ? 'active' : ''}`}
+          onClick={() => handlePageClick(index + 1)}
+        >
+          {index + 1}
+        </a>
+      ))}
+      <a href="#" className="next" onClick={handleNextClick}>Next »</a>
 
-
-
-
-
-
-
-
-
-<style jsx>{`
+      <style jsx>{`
 
 
 
@@ -978,8 +932,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default page
+export default Pagination;
