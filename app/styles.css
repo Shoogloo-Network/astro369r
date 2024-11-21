@@ -740,6 +740,7 @@ input[type="tel"]:focus {
     gap: 23px;
     margin: 20px auto;
     justify-content: center;
+  
 }
 
 .astrologer-image-section {
@@ -806,6 +807,7 @@ input[type="tel"]:focus {
     flex-direction: column;
     gap: 2px;
     align-items: flex-start;
+    
     /* height: 300px; */
     width: 24%;
     padding: 10px;

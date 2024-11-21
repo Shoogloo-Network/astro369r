@@ -67,12 +67,12 @@ const Footer = () => {
                   {section.links.map((link, index) => (
                     <li key={index}>
                       {key === 'connect' ? (
-                        <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-                          <i className={link.icon} style={{ paddingRight: "15px" }} aria-hidden="true"></i>
+                        <a href={link.href} target="_blank" rel="noopener noreferrer">
+                          <i className={link.icon} style={{paddingRight: "15px"}}></i>
                           <span>{link.name}</span>
                         </a>
                       ) : (
-                        <Link href={link.href} aria-label={link.name}>
+                        <Link href={link.href}>
                           {link.name}
                         </Link>
                       )}
@@ -87,20 +87,16 @@ const Footer = () => {
               <p className="newsletter-text">
                 Subscribe to our newsletter for daily horoscopes and updates
               </p>
-              <form onSubmit={handleNewsletterSubmit} className="newsletter-form" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "0px" }}>
-                <label htmlFor="newsletter-email" className="sr-only">Email Address</label>
+              <form onSubmit={handleNewsletterSubmit} className="newsletter-form" style={{display: "flex",flexDirection: "column",alignItems: "center",marginTop: "0px"}}>
                 <input
                   type="email"
-                  id="newsletter-email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  style={{ width: "100%", padding: "10px", marginBottom: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+                  style={{width: "100%", padding: "10px", marginBottom: "0px", borderRadius: "5px", border: "1px solid #ccc"}}
                 />
-                <button type="submit" style={{ width: "100%", padding: "10px", borderRadius: "5px", border: "none", backgroundColor: "#007bff", color: "#fff", cursor: "pointer" }}>
-                  Subscribe
-                </button>
+                <button type="submit" style={{width: "100%", padding: "10px", borderRadius: "5px", border: "none", backgroundColor: "#007bff", color: "#fff", cursor: "pointer"}}>Subscribe</button>
               </form>
             </div>
           </div>
@@ -121,6 +117,20 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* <div className="app-badges">
+        <div className="container">
+          <p>Download our mobile app:</p>
+          <div className="badge-container">
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+              <img src="/google-play-badge.png" alt="Get it on Google Play" />
+            </a>
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+              <img src="/app-store-badge.png" alt="Download on the App Store" />
+            </a>
+          </div>
+        </div>
+      </div> */}
     </footer>
   );
 };

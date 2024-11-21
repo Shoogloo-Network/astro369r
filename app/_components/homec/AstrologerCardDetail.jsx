@@ -1,14 +1,19 @@
-"use client"
-import React from 'react'
+'use client'
+import React , {useState}from 'react'
 import "../../globals.css";
 import "../../styles.css";
-const AstrologerCardDetail = ({cardData}) => {
+import DetailsPopUp from '../advisorsc/DetailsPopUp';
+const AstrologerCardDetail = ({cardData , style}) => {
+  const [popUp,setPopUp] = useState(false);
+  const popUpfunc =(value)=>{
+    setPopUp(value);
+  }
   return (
     <div>
       {/* Desktop View */}
-      <section className="astrologer-details container desktop-view">
+      <section className="astrologer-details container desktop-view" style={style}>
         {cardData?.map((astrologer, index) => (
-          <div key={index} className="astrologer-container">
+          <div key={index} className="astrologer-container" >
             <div className="astrologer-image-section">
               <img
                 src={astrologer?.image}
@@ -52,15 +57,17 @@ const AstrologerCardDetail = ({cardData}) => {
                 <i className="fa-solid fa-phone" />
                 <p>Call</p>
               </div>
-              <div className="call-button2 txtsize white">
+              <div className="call-button2 txtsize white" onClick={()=>{setPopUp(!popUp)}}>
                 <i className="fa-solid fa-message" />
-                <p className="white">Chat</p>
+                <p className="white" >Chat</p>
               </div>
             </div>
           </div>
         ))}
       </section>
-
+{
+  popUp && <DetailsPopUp popUp={popUpfunc}/>
+}
       {/* Mobile View */}
       <section className="astrologer-details container mobile-view">
         {cardData?.map((astrologer, index) => (
