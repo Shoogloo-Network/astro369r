@@ -981,7 +981,7 @@ input:checked + .slider:before {
 }
 
 .dob_input {
-  margin: 8px 6px 8px 0;
+  margin: 2px 6px 8px 0;
   padding: 6px 10px;
   width: 100%;
   outline: none;
