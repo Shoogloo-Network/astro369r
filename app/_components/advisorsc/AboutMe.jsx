@@ -1,82 +1,34 @@
 'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-import AboutMe from '@/app/_components/advisorsc/AboutMe';
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React, { useState } from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
+const AboutMe = () => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
   };
 
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
-  };
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-      <AboutMe/>
-    </div>
+    <section className="aboutMe container">
+      <div className="profile-image">
+        <img src="/advisorProfile.jfif" alt="profile" />
+      </div>
+      <div className="about-content">
+        <h1>About Me</h1>
+        <p className="about-text">
+          *PLEASE MAKE SURE YOU READ MY WHOLE PROFILE BEFORE READING * Gifted by the Creator and the Universe since before she was born-- destined to become a source of light, universal love, healing, assistance & guidance to those on her path and crossing her path. Spiritual worker, Seer, Psychic & much more in the spiritual realm-- who is also a certified Life, Love & Relationships, Business & Spiritual Coach; among many other certifications, licenses, titles & callings to service, enlighten & awake her fellowmen to consciously remember, become & honor their soul path, purpose of life & infinite existence & evolution in the physical realm. I can assure you that the spirits are always wanting what is best for you & looking after you. Most of the time, not getting what we want, is a gift and a blessing, indeed. I love you still with universal love.
+          {showMore && (
+            <span className="hidden-text" style={showMore ? { display: 'block' } : { display: 'none' }}>
+              As a spiritual worker & living being, I reserve myself the right to disconnect from any person who is disrespectful or has a need to tell me how to do my work, or wants to force me to see what they want me to see-- if the spirits do not allow me to see it or do not show it to me-- I am not the spiritual worker that you need. You do not walk into the office of a medical doctor with a pistol to assist you-- much less you should do that with a spiritual medical doctor and worker, which the most that is needed in the spiritual realm is peace, light and harmony. IMPORTANT: please, do not come to me if you expect an answer in 30 seconds, I have to ask the spirits, I am a spiritual worker, not a psychic vending machine. If you want the right answers, please ask the right questions. Some people want a reading, and they don't even know what they want, what to ask, how to ask for it-- so they expect a good answer in seconds; so I have to start by organizing their thoughts, ideas and emotions, which could be all over the place. And I do not mind doing so, I am here because I want to assist you, but please do not expect that in seconds or in one minute. Because, then, the work is not just of a psychic, but of a mentor, psychologist, consultant, coach, etc. Do not underestimate my work just because you are getting it at an affordable rate. I am here to assist you, guide & enlighten you, but come to me with respect & manners, I am not here to be or get abused or mistreated (nor are my spirits). Positivity, and an open heart filled with humility to LISTEN to the spirit world through your humbler server is a must. Format for birthdate MONTH, DAY AND YEAR. Hablamos Español.
+            </span>
+          )}
+        </p>
+        <button className="read-more" onClick={toggleShowMore}>
+          {showMore ? 'Read Less' : 'Read More'}
+        </button>
+      </div>
 
-
-
-
-
-
-
-
-
-<style jsx>{`
+      <style jsx>{`
 
 
 
@@ -972,8 +924,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default page
+export default AboutMe;
