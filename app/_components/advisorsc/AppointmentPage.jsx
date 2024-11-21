@@ -1,80 +1,88 @@
-'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React, { useState } from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
+const AppointmentPage = ({ isVisible, onAppointmentToggle }) => {
+  const [sessionType, setSessionType] = useState('chat');
+  const [sessionDuration, setSessionDuration] = useState(15);
+  const [appointmentDate, setAppointmentDate] = useState('');
+  const [appointmentTime, setAppointmentTime] = useState('');
+
+  const handleConfirmAppointment = () => {
+    // Handle appointment confirmation logic here
+    console.log({
+      sessionType,
+      sessionDuration,
+      appointmentDate,
+      appointmentTime,
+    });
+    onAppointmentToggle(); // Hide the appointment page after confirmation
   };
 
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
-  };
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-    </div>
-
-
-
-
-
-
-
-
-
-<style jsx>{`
+    <div
+      className="appointment-page"
+      id="appointment-page-id"
+      style={{
+        maxHeight: isVisible ? '1000px' : '0',
+        overflow: 'hidden',
+        transition: 'max-height 0.5s ease',
+      }}
+    >
+      <div className="session-type-section">
+        <h2>Choose Session Type</h2>
+        <select
+          id="session-type-dropdown"
+          value={sessionType}
+          onChange={(e) => setSessionType(e.target.value)}
+        >
+          <option value="chat">Chat</option>
+          <option value="call">Call</option>
+        </select>
+      </div>
+      <div className="session-duration-section">
+        <h2>Choose Session Duration</h2>
+        <select
+          id="session-duration-dropdown"
+          value={sessionDuration}
+          onChange={(e) => setSessionDuration(parseInt(e.target.value))}
+        >
+          <option value={15}>15 Minutes - $45</option>
+          <option value={30}>30 Minutes - $80</option>
+          <option value={60}>60 Minutes - $150</option>
+        </select>
+      </div>
+      <div className="date-time-section">
+        <div className="date-picker-container">
+          <h2>Select Date</h2>
+          <div className="date-picker">
+            <input
+              type="date"
+              id="appointment-date"
+              value={appointmentDate}
+              onChange={(e) => setAppointmentDate(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="time-picker-container">
+          <h2>Select Time</h2>
+          <div className="time-slots">
+            {['10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM'].map((time, index) => (
+              <button
+                key={index}
+                className="time-slot"
+                onClick={() => setAppointmentTime(time)}
+              >
+                {time}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="booking-confirmation">
+        <button className="book-appointment-btn" onClick={handleConfirmAppointment}>
+          Confirm Appointment
+        </button>
+      </div>
+      <style jsx>{`
 
 
 
@@ -970,8 +978,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default page
+export default AppointmentPage;

@@ -1,80 +1,81 @@
 'use client'
-import React , { useState } from 'react';
-import ProfileSection from '../../_components/advisorsc/ProfileSection' 
-import AppointmentPage from '../../_components/advisorsc/AppointmentPage' 
-const page = () => {
-    const [isAppointmentPageVisible, setIsAppointmentPageVisible] = useState(false);
+import React from 'react';
 
-  const profile = {
-    image: '/advisorProfile.jfif',
-    name: 'Abhilasha Singh',
-    experience: 35,
-    specialties: ['Vedic', 'Career', 'Empath'],
-    languages: ['Hindi', 'English'],
-    location: 'Bangalore',
-    actions: [
-      {
-        type: 'Call',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/voice_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Chat',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/chat_active.png',
-        backgroundColor: 'rgb(108, 132, 255)',
-        borderColor: '#6c84ff',
-        color: '#6c84ff',
-      },
-      {
-        type: 'Appointment',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/Artboard.png',
-        backgroundColor: '#c24ae7',
-        borderColor: '#c24ae7',
-        color: '#c24ae7',
-      },
-      {
-        type: 'Video Consult',
-        freeMinutes: 3,
-        rate: '$2.99',
-        icon: '/face-time.png',
-        backgroundColor: '#ff07d6',
-        borderColor: '#ff07d6',
-        color: '#ff07d6',
-      },
-    ],
-  };
-
-  const handleAppointmentToggle = () => {
-    setIsAppointmentPageVisible((prev) => !prev);
-  };
+const ProfileSection = ({ profile, onAppointmentToggle }) => {
   return (
-    <>
-   
-   <div>
-      <ProfileSection profile={profile} onAppointmentToggle={handleAppointmentToggle} />
-      <AppointmentPage
-        isVisible={isAppointmentPageVisible}
-        onAppointmentToggle={handleAppointmentToggle}
-      />
-    </div>
-
-
-
-
-
-
-
-
-
-<style jsx>{`
+    <section className="mainProfileSection">
+      <div className="profileSection container">
+        <div className="profile-image-section">
+          <div className="profile-image-wrapper">
+            <img
+              src={profile.image}
+              alt="advisorProfile"
+              className="profile-image"
+            />
+          </div>
+          <div className="profile-status">
+            <p className="status-online">ONLINE</p>
+          </div>
+        </div>
+        <div className="profile-details-section">
+          <div className="profile-header">
+            <div className="profile-name-section">
+              <h1 className="profile-name">{profile.name}</h1>
+              <div className="astrologer-info">
+                <p className="greeting">
+                  <span>
+                    <i className="fa-solid fa-graduation-cap" /> {profile.experience} Years Of
+                    experience
+                  </span>
+                </p>
+                <p className="greeting">{profile.specialties.join(' | ')}</p>
+                <p className="greeting">
+                  <span>
+                    <i className="fa fa-language" aria-hidden="true" />
+                    &nbsp;{profile.languages.join(' | ')}
+                  </span>
+                </p>
+                <p className="greeting">
+                  <span>
+                    <i className="fa-solid fa-map-marker" aria-hidden="true" />{" "}
+                    {profile.location}
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="profile-actions-mainDiv">
+            {profile.actions.map((action, index) => (
+              <div className="profile-actions" key={index}>
+                <div
+                  className="action-1"
+                  style={{ borderColor: action.borderColor, color: action.color }}
+                >
+                  <i className="fa-solid fa-award" />
+                  <p>{action.freeMinutes} free min</p>
+                </div>
+                <div
+                  className="action-2"
+                  style={{ backgroundColor: action.backgroundColor }}
+                  onClick={()=>{
+                    if(action.type==='Appointment'){
+                        onAppointmentToggle();
+                    }
+                  }}
+                >
+                  <img src={action.icon} alt={action.type} />
+                  <div className="action-2-chat">
+                    <h3>{action.type}</h3>
+                    <p>{action.rate}/min</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
 
 
 
@@ -970,8 +971,8 @@ flex-direction: row;
 
 
 `}</style>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default page
+export default ProfileSection;

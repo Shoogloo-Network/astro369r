@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import AdvisorsBanner from '../_components/advisorsc/AdvisorsBanner'
 
@@ -18,7 +19,8 @@ const page = () => {
           price: {
             offer: "5 minutes for $1",
             regular: "$2.99/min"
-          }
+          },
+          link:'/advisors/cosmic-advice',
         },
         {
             image: "astrologer1.jpg",
@@ -31,7 +33,8 @@ const page = () => {
             price: {
               offer: "5 minutes for $1",
               regular: "$2.99/min"
-            }
+            },
+            link:'/advisors/cosmic-advice',
           },
           {
             image: "astrologer1.jpg",
@@ -44,7 +47,8 @@ const page = () => {
             price: {
               offer: "5 minutes for $1",
               regular: "$2.99/min"
-            }
+            },
+            link:'/advisors/cosmic-advice',
           },
           {
             image: "astrologer1.jpg",
@@ -57,7 +61,8 @@ const page = () => {
             price: {
               offer: "5 minutes for $1",
               regular: "$2.99/min"
-            }
+            },
+            link:'/advisors/cosmic-advice',
           },
           {
               image: "astrologer1.jpg",
@@ -70,7 +75,8 @@ const page = () => {
               price: {
                 offer: "5 minutes for $1",
                 regular: "$2.99/min"
-              }
+              },
+              link:'/advisors/cosmic-advice',
             },
             
           {
@@ -84,7 +90,8 @@ const page = () => {
             price: {
               offer: "5 minutes for $1",
               regular: "$2.99/min"
-            }
+            },
+            link:'/advisors/cosmic-advice',
           },
         // Duplicate for other astrologers
       ];

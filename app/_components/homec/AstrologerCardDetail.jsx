@@ -2,19 +2,26 @@
 import React , {useState}from 'react'
 import "../../globals.css";
 import "../../styles.css";
+import { useRouter } from 'next/navigation'
 import DetailsPopUp from '../advisorsc/DetailsPopUp';
+
 const AstrologerCardDetail = ({cardData , style}) => {
+  const router = useRouter();
   const [popUp,setPopUp] = useState(false);
   const popUpfunc =(value)=>{
     setPopUp(value);
   }
+  
   return (
     <div>
       {/* Desktop View */}
       <section className="astrologer-details container desktop-view" style={style}>
         {cardData?.map((astrologer, index) => (
           <div key={index} className="astrologer-container" >
-            <div className="astrologer-image-section">
+            <div className="astrologer-image-section" onClick={()=>{
+             router.push(`${astrologer?.link}`);
+
+            }}>
               <img
                 src={astrologer?.image}
                 alt="astrologer-image"
