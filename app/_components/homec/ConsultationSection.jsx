@@ -3,13 +3,14 @@ import React from 'react';
 import "../../globals.css";
 import "../../styles.css";
 import ConsultCard from './ConsultCard';
+import Link from 'next/link';
 const ConsultationSection = ({ cardData }) => {
  
   const consultationCards = [
     {
       image: "Astro icons 80x80-01.png",
       title: "Psychic Readings",
-      link:'/services/a'
+      link:'/services'
     },
     {
       image: "Astro icons 80x80-02.png",
@@ -59,9 +60,9 @@ const ConsultationSection = ({ cardData }) => {
               Private online consultations with verified experts
             </p>
           </div>
-          <button className="view-specialists-button txtsize">
-            View All specialists
-          </button>
+          <Link href='/services' >  <button className="view-specialists-button txtsize">
+          View All specialists
+          </button></Link>
         </div>
       <ConsultCard consultationCards={consultationCards} slider={false}/>
       </div>
