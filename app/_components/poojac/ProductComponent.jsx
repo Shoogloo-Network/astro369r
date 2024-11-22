@@ -31,8 +31,8 @@ const [showDetails, setShowDetails] = useState(true);
 
   return (
     <div className="product-container-pooja" style={{display:'flex',flexDirection:'column'}}>
-      <div style={{display:'flex'}}>
-      <div style={{width:'50%'}}>
+      <div style={{display:'flex'}} className='product-container-pooja-div'>
+      <div  className='product-container-pooja-gallery'>
       <div className="product-gallery">
         <div className="thumbnail-container">
           {productData.images.map((image, index) => (
@@ -54,7 +54,7 @@ const [showDetails, setShowDetails] = useState(true);
       </div>
       </div>
 
-      <div  style={{width:'50%'}}>
+      <div  >
       <div className="product-details">
         <div id="timerContainer" className="desktopTimer">
           <p className="white">Time Remaining : </p><span id="timer"></span>
@@ -493,10 +493,17 @@ const [showDetails, setShowDetails] = useState(true);
    .product-container-pooja{
        flex-direction: column;
    }
+.product-container-pooja-gallery{
+width:'100% !important'
+}
    .product-container {
        flex-direction: column;
    }
-
+.product-container-pooja-div{
+display:'flex';
+flex-direction:column;
+width:'100%';
+}
    .product-gallery {
       
       //  width: 74%;
@@ -504,7 +511,7 @@ const [showDetails, setShowDetails] = useState(true);
    }
 
    .main-image {
-       width: 100%;
+      //  width: 100%;
       height: auto;
    }
 
@@ -540,7 +547,7 @@ const [showDetails, setShowDetails] = useState(true);
 .product-container-pooja{
    max-width: 1269px;
    margin: 20px auto;
-   display: flex;
+  //  display: flex;
    gap: 30px;
  
    background-color: white;
