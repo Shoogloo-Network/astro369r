@@ -174,13 +174,13 @@ const DetailsPopUp = ({popUp}) => {
             <span className="slider" />
           </label>
         </div>
-        <input
+        {/* <input
           type="text"
           placeholder="search"
           className="dob_input size2"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-        />
+        /> */}
         <input
           type="checkbox"
           id="partner"
