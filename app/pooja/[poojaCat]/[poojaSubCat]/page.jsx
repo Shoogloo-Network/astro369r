@@ -5,6 +5,7 @@ import BannerPooja from '../../../_components/poojac/BannerPooja'
 import ContainerPooja from '../../../_components/poojac/ContainerPooja'
 import '../../../globals.css';
 import PoojaProductDetail from '../../../_components/poojac/PoojaProductDetail'
+import ProductComponent from '@/app/_components/poojac/ProductComponent';
 const Page =  () => {
   const [poojaData, setPoojaData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -37,7 +38,8 @@ const Page =  () => {
 
   return (
     <div className="container">
-      <PoojaProductDetail poojaData={poojaData} />
+      {/* <PoojaProductDetail poojaData={poojaData} /> */}
+      <ProductComponent/>
     </div>
   );
 }
