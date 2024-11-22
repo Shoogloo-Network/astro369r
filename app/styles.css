@@ -1238,6 +1238,10 @@ input[type="tel"]:focus {
 
 /* For small mobile devices (max-width: 600px) */
 @media only screen and (max-width: 600px) {
+    .articles-section{
+        flex-direction: column;
+        margin-top: 10px;
+    }
     .astrologer-actions-image-online-mobile{
         display: flex;
         flex-direction: column;
@@ -1259,7 +1263,7 @@ input[type="tel"]:focus {
     }
 
     .bannerSection {
-        height:400px; /* Adjusted height for smaller screens */
+        height:auto; /* Adjusted height for smaller screens */
         justify-content: start;
         margin-bottom: 10px;
     }
@@ -1278,7 +1282,7 @@ input[type="tel"]:focus {
 
     /* Hero Image Slider */
     .hero-image-slider-container {
-        height: auto; /* Adjust slider height */
+      height: 30%;  /* Adjust slider height */
     }
 
     .image-slider-hero-image {
