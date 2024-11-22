@@ -502,7 +502,7 @@ font-weight: 700;
     flex-grow: 0;
     /* Prevents the button from growing */
     width: 130px;
-    height: 50px;
+    height: 44px;
 }
 
 .send-sms-button:hover{
@@ -530,7 +530,7 @@ font-weight: 700;
 
 .country-code {
     background-color: transparent;
-    padding: 15.5px;
+    padding: 9px;
     border: 1px solid #ccc;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -538,7 +538,7 @@ font-weight: 700;
 }
 
 input[type="tel"] {
-    padding: 17px;
+    padding: 9px;
     border: 1px solid #ccc;
     border-left: none;
     border-top-right-radius: 5px;
@@ -976,10 +976,10 @@ input:checked + .slider:before {
   height: 40px;
 }
 input[type="tel"]{
-  padding: 11px;
+  padding: 9px;
 }
 .country-code{
-  padding: 9.8px;
+  padding: 9px;
 }
 .phone-input-container{
   padding: 5px;
