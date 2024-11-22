@@ -104,14 +104,14 @@ const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
       link:`/pooja/${dynamicRoute}/sindoor`
     },
     {
-      imageUrl: "hanumanjisakti.jpg",
+      imageUrl: "/hanumanjisakti.jpg",
       title: "Hanuman Chalisa and Aarti",
       description:
         "Get Rid of Health Issues & Attract a Healthy Body, Mind & Life Increase Happiness & Act As a Protector Against",
       date: "01 Oct 2024",
     },
     {
-      imageUrl: "bindispell.jpg",
+      imageUrl: "/bindispell.jpg",
       title: "Love Binding Spell",
       description:
         "Creates A Strong Connection Between Two People In Love Increase Happiness & Act As a Protector Against",
@@ -121,21 +121,21 @@ const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
 
   const CardsPoojaWithoutBtn = [
     {
-      imageUrl: "hanumanjiboondi.jpg",
+      imageUrl: "/hanumanjiboondi.jpg",
       title: "Hanuman Sindoor/ Boondi Arpan",
       description:
         "Increase Happiness & Act As a Protector Against Troubles Increase Happiness & Act As a Protector Against",
       authorName: "John Doe",
     },
     {
-      imageUrl: "hanumanjisakti.jpg",
+      imageUrl: "/hanumanjisakti.jpg",
       title: "Hanuman Chalisa and Aarti",
       description:
         "Get Rid of Health Issues & Attract a Healthy Body, Mind & Life Increase Happiness & Act As a Protector Against",
       authorName: "John Doe",
     },
     {
-      imageUrl: "bindispell.jpg",
+      imageUrl: "/bindispell.jpg",
       title: "Love Binding Spell",
       description:
         "Creates A Strong Connection Between Two People In Love Increase Happiness & Act As a Protector Against",
@@ -202,12 +202,10 @@ const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
           <div className={styles.sectionHeaderPooja}>
             <h2 className={styles.size1}>Book Online Puja &amp; Anushthan</h2>
           </div>
-          <div className={styles.cardsPooja}>
+          <div className={styles.cardsPooja} style={{margin:'10px'}}>
             {CardsPooja.map((item, index) => {
               return (
-               <Link href={item.link ? item.link : "#"} key={index}> <div className={styles.cardPooja}  onClick={()=>{
-                  
-               }}>
+               <Link href={item.link ? item.link : "#"} key={index} className={styles.cardPooja} > <div   >
                  <img src={item.imageUrl} alt={item.title} />
                  <h3 className={styles.size2}>{item.title}</h3>
                  <p className={styles.txtsize}>{item.description}</p>
@@ -222,13 +220,13 @@ const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
         </section>
         {/* Popular Classes */}
         <section className={styles.popularPooja}>
-          <div className={styles.sectionHeaderPooja}>
+          <div className={styles.sectionHeaderPooja} style={{margin:'10px'}}>
             <h2 className={styles.size1}>
               Popular Creativity &amp; Inspiration Classes
             </h2>
             <button className={styles.viewAllPooja}>View All</button>
           </div>
-          <div className={styles.cardsPooja}>
+          <div className={styles.cardsPooja} style={{margin:'10px'}}>
             {CardsPoojaWithoutBtn.map((item, index) => {
               return (
                 <div className={styles.cardPooja} key={index}>

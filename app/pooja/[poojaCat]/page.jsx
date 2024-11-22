@@ -32,7 +32,7 @@ const Page = ({ params }) => {
 
   return (
     <section className={styles.desktop}>
-      <h1>{poojaCat}</h1>
+      {/* <h1>{poojaCat}</h1> */}
       <BannerPooja pickIndex={index} />
       <div className={styles.hspace} />
       <div className={styles.hspace} />
