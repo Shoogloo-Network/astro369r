@@ -96,7 +96,7 @@ const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
   ];
   const CardsPooja = [
     {
-      imageUrl: "hanumanjiboondi.jpg",
+      imageUrl: "/hanumanjiboondi.jpg",
       title: "Hanuman Sindoor/ Boondi Arpan",
       description:
         "Increase Happiness & Act As a Protector Against Troubles Increase Happiness & Act As a Protector Against",

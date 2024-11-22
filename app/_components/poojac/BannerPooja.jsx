@@ -6,7 +6,7 @@ import Link from 'next/link';
 const BannerPooja = ({pickIndex}) => {
     const btnName =[{
         title:'Grah Shanti',
-        url:'/pooja',
+        url:'/pooja/grah-shanti',
     },{
         title:'Job & Business',
         url:'/pooja/job-and-bussiness',
