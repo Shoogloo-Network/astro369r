@@ -53,7 +53,7 @@ const DetailsPopUp = ({popUp}) => {
           }}>X</span>
         </h1>
         <p className="sharePara txtsize">
-          to share it with your astrologer, for saving time on consultation
+          To share it with your astrologer, for saving time on consultation
         </p>
         <div className="details_tab">
           <ul style={{ display: "flex", justifyContent: "center", gap: 10 }}>
@@ -200,15 +200,15 @@ const DetailsPopUp = ({popUp}) => {
         }}>X</span>
       </h1>
       <p className="sharePara txtsize">
-        to share it with your astrologer, for saving time on consultation
+        To share it with your astrologer, for saving time on consultation
       </p>
       <div className="details_tab">
-        <ul style={{ display: "flex", justifyContent: "center", gap: 10 }}>
+        <ul style={{ display: "flex", justifyContent: "center", gap: 10 ,}}>
           <li>
-            <button id="myDetailsBtn" onClick={toggleDetails}>My Details</button>
+            <button id="myDetailsBtn" onClick={toggleDetails}  >My Details</button>
           </li>
           <li>
-            <button style={{ backgroundColor: "#286851", color: "#fff" }}>
+            <button style={{ backgroundColor: "#286851", color: "#fff" , borderRadius:'6px'}}>
               Partner Details
             </button>
           </li>
@@ -319,13 +319,13 @@ const DetailsPopUp = ({popUp}) => {
           <span className="slider" />
         </label>
       </div>
-      <input
+      {/* <input
         type="text"
         placeholder="search"
         className="dob_input size2"
         value={partnerSearch}
         onChange={(e) => setPartnerSearch(e.target.value)}
-      />
+      /> */}
       <button onClick={handleSubmit}>Submit</button>
     </div>
     <style jsx>{`
@@ -969,7 +969,7 @@ input:checked + .slider:before {
   text-decoration: none;
   border: 1px solid #999;
   padding: 10px 20px;
-  border-radius: 2px;
+  border-radius: 6px;
   color: #333;
 
   background: #fff;
