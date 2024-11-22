@@ -1,7 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+'use client'
+import React, { useState } from 'react';
 
+const EmailLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [termsAccepted, setTermsAccepted] = useState(true);
+
+  const handleSubmit = () => {
+    console.log({
+      email,
+      password,
+      termsAccepted
+    });
+  };
+
+  return (
+    <div className="pop-up-register" >
+      <div className="pop-up-register-form-div">
+        <h2>Enter Your Details</h2>
+        <div className="loginOptions">
+          <div className="loginOption facebookLogin">
+            <a href="">
+              <img src="/facebook_5968764.png" alt="Facebook" />
+            </a>
+            <p>Facebook</p>
+          </div>
+          <div className="loginOption googleLogin">
+            <a href="">
+              <img src="/google_13170545.png" alt="Google" />
+            </a>
+            <p>Google</p>
+          </div>
+        </div>
+        <div className="alternateLogin">
+          <hr />
+          <p>or Login With</p>
+          <hr />
+        </div>
+        <div>
+          <label htmlFor="email">Email Id</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            placeholder="Enter Your Email Id"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            placeholder="Enter Your password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="sEmail">
+          <p className="sEmailPara">
+            Signed in with <span className="linkEmail"><a href="loginSignup.html">Mobile</a></span>
+          </p>
+        </div>
+        <button id="continue-sign-up-btn" onClick={handleSubmit}>Continue</button>
+        <div className="terms-and-resend">
+          <div className="terms-container">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              checked={termsAccepted}
+              onChange={(e) => setTermsAccepted(e.target.checked)}
+            />
+            <label htmlFor="terms">
+              I agree to the <a href="#">terms and conditions</a>
+            </label>
+          </div>
+          <div className="resend-otp"><a href="#">Forgot Password?</a></div>
+        </div>
+        <div>
+          <h4 className="dAccount">
+            Don't have an account? <span className="linkEmail"><a href="individualSignup.html">Register</a></span>
+          </h4>
+        </div>
+      </div>
+
+      <style jsx>{`
+       
 
 /* 1. Reset & Global Styles */
 * {
@@ -264,11 +347,11 @@ footer {
 }
 
 .menu-section {
-  display: block;
-  position: absolute;
+  display: none;
+  position: fixed;
   top: 52px;
   width: 1269px;
-  height: auto;
+  height: 300px;
   background-color: #ffffff;
   z-index: 6000000;
   left: 46.5%;
@@ -277,7 +360,6 @@ footer {
   box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding: 20px 0;
 }
 
 .menu-section:hover {
@@ -367,7 +449,7 @@ footer {
 
 .row {
   display: flex;
-  /* gap: 60px; */
+ 
 }
 
 .mega-menu-column>hr {
@@ -386,53 +468,46 @@ footer {
 
 .submenu-header-div {
   display: flex;
-  align-items: center;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
+  gap: 15px;
+  margin-top: 20px;
 
-.submenu-header-div:hover {
-  background-color: #f8f9fa;
-  transform: translateX(5px);
 }
 
 .submenu-header-image {
-  border-radius: 8px;
+  height: 60px;
+  width: 60px;
   object-fit: cover;
 }
 
 .submenu-header-right-div {
-  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.submenu-header-right-div h4 {
-  color: #17253d;
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 4px;
+.submenu-header-right-div>h3 {
+  color: #2d2d32;
 }
 
-.submenu-header-right-div p {
-  color: #666;
-  font-size: 12px;
-  margin: 0;
+.submenu-header-right-div>p {
+  color: #2d2d32;
 }
 
 
 
 /* Header */
 .login-hover {
+  display: none;
   position: absolute;
-  top: 48px;
-  /* right: 40px; */
-  /* width: 200px; */
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 6000000;
+  top: 52px;
+  right: 40px;
+  font-weight: 700;
+  background-color: #e6e6e6;
+  border: 2px solid #f0f0f5;
+  border-bottom: 3px solid black;
+  z-index: 3;
+  height: 180px;
+
 }
 
 .user-profile {
@@ -441,99 +516,138 @@ footer {
 
 .login-hover>ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-
-
-.login-hover>ul>li {
-  padding: 8px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.login-hover>ul>li:hover {
-  background-color: #f8f9fa;
-}
-
-.login-hover>ul>li a {
-  color: #17253d;
-  text-decoration: none;
-  font-size: 14px;
-  display: block;
-}
-
-.login-hover>ul>li hr {
-  margin: 0;
-  border: none;
-  border-top: 1px solid #eee;
-}
-
-
-
-
-/* .user-profile:hover + .login-hover , .login-hover:hover {
-
-  display: block;
-cursor: pointer;
-} */
-
-
-/* .pop-up-register {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(184, 187, 217, 0.8);
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  display: none;
-  z-index: 1000;
-} */
-
-.pop-up-register-show {
-  display: block;
-}
-
-
-
-#pop-up .pop-up-register-form-div {
-  position: absolute;
-  width: 500px;
-  height: 420px;
-  background-color: #fff;
-  z-index: 2000;
-  left: 50%;
-  padding: 30px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #b8bbd9;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px rgba(184, 173, 173, 0.5);
-  opacity: 1;
-}
-
-
-#pop-up .pop-up-register-form-div>h2 {
   text-align: center;
 }
 
 
 
+
+
+.login-hover>ul>li {
+  margin: 12px 20px;
+  cursor: pointer;
+
+  color: #17253d;
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pop-up-register {
+  /* position: fixed; */
+  width: 90vw;
+  height: 100vh;
+  /* background-color: rgba(184, 187, 217, 0.8); */
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  /* display: none; */
+  /* z-index: 1000; */
+}
+
+.alternateLogin {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.sEmailPara{
+  text-align: center;
+  color: #67717e;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  padding-bottom: 12px;
+}
+
+
+
+.linkEmail {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  margin-left: 6px;
+  /* float: right; */
+  cursor: pointer;
+  /* text-decoration: underline; */
+  color: #007bff;
+  font-weight: 500;
+}
+.linkEmail:hover{
+  text-decoration: underline;
+}
+.dAccount{
+  color: #67717e;
+  font-size: 14px;
+  /* text-align: center; */
+  line-height: 1.4;
+  margin-top: 0;
+  }
+.pop-up-register-show {
+  display: block;
+}
+
+#pop-up .pop-up-register-form-div {
+  position: absolute;
+  width: 500px;
+  height: 524px;
+  background-color: #fff;
+  z-index: 2000;
+  left: 50%;
+  padding: 30px;
+  margin-top: 40px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #b8bbd9;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(184, 173, 173, 0.2);
+  /* Horizontal offset, Vertical offset, Blur radius, Color */
+  opacity: 1;
+}
+
+#pop-up .pop-up-register-form-div > h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #30343e;
+    font-weight: 500;
+}
+
 form {
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 label {
   display: block;
   margin-bottom: 8px;
-  font-weight: bold;
+  color: #30343e;
+    font-weight: 500;
 }
 
 input[type="email"],
-input[type="phone"] {
+input[type="phone"],input[type="password"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -545,12 +659,13 @@ input[type="phone"] {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -571,12 +686,13 @@ button:hover {
   width: 40px;
   height: 40px;
   text-align: center;
+  font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .otp-input:focus {
-  border-color: #007BFF;
+  border-color: #007bff;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
@@ -585,61 +701,58 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  /* margin-top: 10px;
+  margin-bottom: 20px; */
 }
 
 .terms-container input[type="checkbox"] {
   margin-right: 10px;
-  margin-bottom: 20px;
+margin-bottom: 0;
 }
 
 .terms-container label {
-  margin-bottom: 20px;
-  color: #d3d3d3;
+  font-size: 14px;
+ 
+  color: #67717e;
+  font-weight: 400;
 }
-
 
 .resend-otp {
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 14px;
+  /* font-weight: 700; */
+  margin-bottom: 11px;
   cursor: pointer;
+  margin-left: auto;
+  /* color: #30343e; */
+  color: #007bff;
+    font-weight: 500;
 }
 
-.resend-otp>a:hover {
+.resend-otp > a:hover {
   text-decoration: underline;
-  color: #14bef0;
+  
 }
-
 
 .terms-and-resend {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  /* margin-top: 10px;
+  margin-bottom: 20px; */
   gap: 30px;
-  visibility: hidden;
+
+  /* visibility: hidden; */
 }
 
-header {
+/* body{
 
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  z-index: 3000;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-}
+padding-left: 40px;
+padding-right: 40px;
+} */
 
 
 .login-signup-button {
+  font-size: 13px;
   line-height: 13px;
   color: #737382 !important;
   border-radius: 4px;
@@ -651,15 +764,14 @@ header {
 }
 
 .login-signup-button:hover {
-  color: #007BFF !important;
-  border: solid 1px #007BFF;
+  color: #007bff !important;
+  border: solid 1px #007bff;
 }
 
 hr {
   border: 1px solid #f0f0f5;
   border-radius: 0px;
 }
-
 .logo-container {
   display: flex;
   justify-content: space-between;
@@ -703,12 +815,12 @@ hr {
 
 .menu-container {
   display: flex;
- 
+  padding-bottom: 13.5px;
+  padding-top: 13.5px;
 }
 
 .menu-container-parent {
   display: flex;
-  align-items: center;
 
 }
 
@@ -783,8 +895,79 @@ hr {
 
 }
 
+/* Media Queries */
+
+.loginOptions {
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+}
+
+.loginOption {
+text-align: center;
+color: #67717e;
+font-weight: 400;
+font-size: 14px;
+padding-bottom: 12px;
+}
+
+.mobileLogin img {
+/* Specific styles for email login */
+height: 30px;
+width: 30px;
+object-fit: cover;
+}
+
+.facebookLogin img {
+/* Specific styles for Facebook login */
+height: 30px;
+width: 30px;
+object-fit: cover;
+}
+
+.googleLogin img {
+/* Specific styles for Google login */
+height: 30px;
+width: 30px;
+object-fit: cover;
+}
+
+.accounts{
+margin-top: 20px;
+display: flex;
+justify-content: space-between;
+/* flex-wrap: wrap-reverse */
+/* align-content: center; */
+gap: 80px;
+font-size: 14px;
+color: #3ba5e0;
+line-height: 1.2;
+}
+
+.dealerAccount{
+align-self: flex-end;
+}
 
 
+.alternateLogin{
+color: #a2adbd;
+font-size: 14px;
+text-align: center;
+line-height: 1.4;
+}
+
+.alternateLogin>hr{
+border: none;
+      border-top: 2px dashed #a2adbd; /* Adjust color and thickness as needed */
+      margin: 0px 5px; 
+      width: 120px;
+      align-self: center;
+      
+}
+
+
+
+  
 .logo-container{
   display:block;
 }
@@ -799,7 +982,10 @@ hr {
 
 /* Styles for Mobile View */
 @media (max-width: 768px) {
-  .navbarMobile{
+  .alternateLogin{
+    margin-bottom: 20px;
+  }
+  .navbarMobile  {
       display: none;
       flex-direction: column;
       /* align-items: center; */
@@ -914,14 +1100,17 @@ hr {
 .user-profile-container.active .login-hover {
   display: block; /* Show when active */
 }
-button.prev{
-  display: none;
+
+/* loginsignup */
+#pop-up .pop-up-register-form-div{
+  width: 100%;
+  margin-top: 0px;
+  border-radius: 0px;
+  padding-top: 0px;
 }
-button.next{
-  display: none;
-}
-.card-carousel {
-  overflow-x: scroll;
+#pop-up .pop-up-register-form-div > h2{
+  font-size: 20px;
+  margin: 10px;
 }
 }
 /* Desktop view (769px and above) */
@@ -956,24 +1145,24 @@ button.next{
 }
 
 .txtsize {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .txtsizesm{
   font-size: 8px;
 }
-
 a{
-  font-size: 12px;
+  font-size: 16px;
 }
+
 
 .hspace{
   margin-bottom: 10px;
 }
 .container{
   /* max-width:max-content; */
- margin: 0px 0px ;
-  padding:0px 10px ;
+ margin: 0px 10px ;
+  padding:0px ;
 }
 .container-fullWidth{
   max-width: max-content;
@@ -1015,564 +1204,16 @@ a{
   }
 }
 
-.footer-section {
-position: relative;
-padding: 80px 40px 32px;
-color: #fff;
-overflow: hidden;
-}
 
-.footer-background {
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-image: url('/public/autumn-leaves-composition.jpg'); /* Update with your image path */
-background-size: cover;
-background-position: center;
-/* opacity: 0.7; */
 
-z-index: 1;
-}
 
-.footer-background::after {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-/* background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.95)); */
-}
 
-.footer-content {
-position: relative;
-z-index: 2;
-}
 
-.footer-container {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 40px;
-max-width: 1280px;
-margin: 0 auto;
-}
 
-/* Social Icons Styles */
-.social-icons {
-display: flex;
-gap: 16px;
-margin-bottom: 32px;
-}
 
-.social-icon {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: rgba(255, 255, 255, 0.1);
-display: flex;
-align-items: center;
-justify-content: center;
-color: #fff;
-text-decoration: none;
-transition: all 0.3s ease;
-}
+      `}</style>
+    </div>
+  );
+};
 
-.social-icon:hover {
-background: #fff;
-color: #000;
-transform: translateY(-3px);
-}
-
-/* Newsletter Signup Styles */
-.newsletter-signup {
-margin-top: 32px;
-}
-
-.newsletter-title {
-font-size: 16px;
-margin-bottom: 16px;
-color: #fff;
-}
-
-
-.newsletter-input {
-flex: 1;
-padding: 12px;
-border: 1px solid rgba(255, 255, 255, 0.2);
-border-radius: 4px;
-background: rgba(255, 255, 255, 0.1);
-color: #fff;
-}
-
-.newsletter-button {
-padding: 12px 24px;
-background: #fff;
-color: #000;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.newsletter-button:hover {
-background: rgba(255, 255, 255, 0.9);
-transform: translateY(-2px);
-}
-
-/* Existing styles remain the same */
-.footer-title {
-font-size: 14px;
-font-weight: 500;
-margin-bottom: 24px;
-/* color: #fff; */
-}
-
-.footer-list {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-.footer-item {
-margin-bottom: 16px;
-}
-
-.footer-item a {
-color: rgba(255, 255, 255, 0.7);
-text-decoration: none;
-font-size: 14px;
-transition: color 0.2s;
-}
-
-.footer-item a:hover {
-color: #fff;
-}
-
-.footer-bottom {
-  display: flex;
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: left;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.footer-copyright{
-  color: #fff;
-}
-
-.footer-legal{
-  display: flex;
-  gap: 10px;
-}
-
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-.footer-container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-}
-
-.footer-section {
-  padding: 48px 24px 24px;
-}
-
-.newsletter-form {
-  flex-direction: column;
-}
-
-.social-icons {
-  justify-content: center;
-}
-}
-
-@media (max-width: 480px) {
-.footer-container {
-  grid-template-columns: 1fr;
-}
-
-.social-icons {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-}
-
-/* Header Styles */
-.header-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbarMobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.mega-hover,
-.dropdown {
-  position: relative;
-}
-
-.menu-section,
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 1rem;
-  display: none;
-}
-
-.menu-section {
-  width: 600px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.login-hover {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding: 0 ;
-  min-width: 200px;
-}
-
-/* Footer Styles */
-.footer {
-  background: #f8f9fa;
-  padding-top: 4rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.footer-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.footer-bottom {
-  margin-top: 4rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid #dee2e6;
-}
-
-.footer-bottom-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.app-badges {
-  padding: 2rem 0;
-  background: #e9ecef;
-}
-
-.badge-container {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    padding: 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-bottom-content {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-}
-
-/* Mega Menu Styles */
-.mega-hover {
-  position: relative;
-}
-
-.menu-section {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-/* User Profile Dropdown Styles */
-.user-profile-container {
-  position: relative;
-}
-
-.user-profile {
-  cursor: pointer;
-  padding: 8px;
-}
-
-.login-hover {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  min-width: 138px;
-  z-index: 1000;
-}
-
-.login-hover ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.login-hover li {
-  padding: 10px 15px;
-}
-
-.login-hover li:hover {
-  background-color: #f5f5f5;
-}
-
-.login-hover hr {
-  margin: 0;
-  border-top: 1px solid #eee;
-}
-
-/* Make sure dropdowns appear above other content */
-.headerRes {
-  position: relative;
-  z-index: 100;
-}
-
-.mega-hover {
-  position: relative;
-}
-
-.menu-section {
-  display: block;
-  position: absolute;
-  top: 30px;
-  width: 1269px;
-  height: 300px;
-  background-color: #ffffff;
-  z-index: 6000000;
-  left: 46.5%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.user-profile-container {
-  position: relative;
-  cursor: pointer;
-}
-
-.login-hover {
-  display: block;
-  position: absolute;
-  top: 48px;
-  /* right: 40px; */
-  font-weight: 700;
-  background-color: #e6e6e6;
-  border: 2px solid #f0f0f5;
-  border-bottom: 3px solid black;
-  z-index: 3;
-  height: 168px;
-}
-
-.login-hover > ul {
-  list-style: none;
-  text-align: center;
-}
-
-.login-hover > ul > li {
-  /* margin: 12px 20px; */
-  cursor: pointer;
-  color: #17253d;
-}
-
-.login-hover > ul > li:hover {
-  color: var(--primary-color);
-}
-
-/* Make sure the header has proper z-index */
-.headerRes {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  z-index: 3000;
-}
-
-/* Add styles for the user icon */
-.user-profile i {
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* Mega Menu Styles */
-.menu-section {
-  position: absolute;
-  /* top: 80%; */
-  left: 0;
-  /* width: 80%; */
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-.mega-menu {
-  padding: 0px 0;
- 
-}
-
-.mega-menu-column {
-  /* padding: 15px; */
-}
-
-.mega-menu-column h3 {
-  /* margin-bottom: 15px; */
-  color: #333;
-  font-size: 18px;
-}
-
-.submenu-header-div {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  /* justify-content: center; */
-}
-
-.submenu-header-div:hover {
-  background-color: #f5f5f5;
-}
-
-.submenu-header-image {
-  height: 60px;
-  width: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.submenu-header-right-div {
-  /* margin-left: 15px; */
-}
-
-.submenu-header-right-div h4 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.submenu-header-right-div p {
-  margin:  0 0;
-  font-size: 14px;
-  color: #666;
-}
-
-/* Row and Column Styles */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-}
-
-.col-md-3 {
-  flex: 0 0 25%;
-  max-width: 25%;
-  /* padding: 0 15px; */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .col-md-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  
-  .menu-section {
-    position: static;
-    box-shadow: none;
-  }
-}
+export default EmailLogin;

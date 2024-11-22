@@ -23,8 +23,8 @@ const BannerPooja = ({pickIndex}) => {
 ]
   return (
     <section className={styles.bannerPooja}>
-    <h2 className={styles.size2xl}>Find your perfect investment match!</h2>
-    <p className={styles.size2}>
+    <h2 className={styles.size2xl }  style={{color:'#fff',fontSize:'24px'}}>Find your perfect investment match!</h2>
+    <p className={styles.size2} style={{color:'#fff',fontSize:'18px'}}>
       Expert Portfolios is an all-in-one screening tool...
     </p>
     <div className={styles.buttonsPooja}  >

@@ -43,6 +43,12 @@
     margin-left: -14px;
 }
 
+/* .activeAnchor a{
+    color: #fff !important;
+} */
+.activeHover a{
+    color: #fff !important;
+}
 .subMenuPooja {
     margin-left: 15px;
     margin-top: 10px;
@@ -202,6 +208,9 @@
 }
 
 @media (max-width: 768px) {
+    .bannerPooja{
+        height: 278px;
+    }
     .buttonsPooja .btnPooja {
         width: 164px;
     }
@@ -260,4 +269,15 @@
     .btnPooja {
         margin-bottom: 4px;
     }
+}
+
+.activeStyleLink {
+    color: "#fff !important";
+    
+}
+
+
+
+.hspace{
+    margin-bottom: 20px;
 }

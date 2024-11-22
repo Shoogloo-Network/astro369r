@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "../../pooja.module.css";
 import "../../globals.css";
 import Link from 'next/link';
-const ContainerPooja = ({ pickIndex }) => {
+const ContainerPooja = ({ pickIndex , dynamicRoute }) => {
   const sidebarData = [
     {
       title: "Grah Shanti",
@@ -101,6 +101,7 @@ const ContainerPooja = ({ pickIndex }) => {
       description:
         "Increase Happiness & Act As a Protector Against Troubles Increase Happiness & Act As a Protector Against",
       date: "01 Oct 2024",
+      link:`/pooja/${dynamicRoute}/sindoor`
     },
     {
       imageUrl: "hanumanjisakti.jpg",
@@ -172,11 +173,11 @@ const ContainerPooja = ({ pickIndex }) => {
                   pickIndex(index);
                 }}
                 className={
-                  activeIndex === index ? "activeHover" : "activeAnchor"
+                  (activeIndex === index) ? styles.activeHover : styles.activeAnchor
                 }
                 style={activeIndex === index ? activeStyle : undefined}
               >
-                <Link href="#">{item.title}</Link>
+                <Link href="#" className={( activeIndex === index )? styles.activeStyleLink : ""}   >{item.title}</Link>
               </li>
               <ul
                 className={styles.submenuPooja}
@@ -204,15 +205,17 @@ const ContainerPooja = ({ pickIndex }) => {
           <div className={styles.cardsPooja}>
             {CardsPooja.map((item, index) => {
               return (
-                <div className={styles.cardPooja} key={index}>
-                  <img src={item.imageUrl} alt={item.title} />
-                  <h3 className={styles.size2}>{item.title}</h3>
-                  <p className={styles.txtsize}>{item.description}</p>
-                  <div className={styles.cardPoojaBookNow}>
-                    <span>{item.date}</span>
-                    <button className={styles.viewAllPooja}>Book Now</button>
-                  </div>
-                </div>
+               <Link href={item.link ? item.link : "#"} key={index}> <div className={styles.cardPooja}  onClick={()=>{
+                  
+               }}>
+                 <img src={item.imageUrl} alt={item.title} />
+                 <h3 className={styles.size2}>{item.title}</h3>
+                 <p className={styles.txtsize}>{item.description}</p>
+                 <div className={styles.cardPoojaBookNow}>
+                   <span>{item.date}</span>
+                   <button className={styles.viewAllPooja}>Book Now</button>
+                 </div>
+               </div></Link>
               );
             })}
           </div>
