@@ -24,7 +24,7 @@ const productData = {
 
 const ProductComponent = () => {
   const [mainImage, setMainImage] = useState(productData.images[0]);
-
+const [showDetails, setShowDetails] = useState(true);
   const changeImage = (image) => {
     setMainImage(image);
   };
@@ -123,14 +123,14 @@ const ProductComponent = () => {
     
 
       <div className="product-description-section container">
-        <div className="product-description accordion-active">
-          <h3 className="accordion-header size1">
+        <div className="product-description accordion-active"  >
+          <h3 className="accordion-header size1" onClick={()=>{setShowDetails(!showDetails)}}>
             Product Details
             <span className="accordion-icon size2">
               <i className="fa-solid fa-minus"></i>
             </span>
           </h3>
-          <div className="accordion-content">
+         {showDetails&& <div className="accordion-content">
             <div className="puja-details-section">
               <h2 className="puja-title">{productData.title}</h2>
               <p className="puja-description">{productData.details.description}</p>
@@ -149,7 +149,7 @@ const ProductComponent = () => {
                 <p className="rules-description size2">{productData.rules}</p>
               </div>
             </div>
-          </div>
+          </div>}
         </div>
       </div>
 
