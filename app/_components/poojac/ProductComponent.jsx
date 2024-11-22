@@ -153,13 +153,36 @@ const ProductComponent = () => {
         </div>
       </div>
 
+      <div className="guidance-section">
+  <div className="container-guidance">
+    <div className="row-guidance">
+      <div className="col-left">
+        <span className="heading">Need Instant Guidance?</span>
+        <span className="subheading">
+          <span className="highlight">Talk Or Chat</span>With Our Astrologers
+          Now
+        </span>
+        <p className="description">
+          Connect with top Astrologers in India for online consultations via
+          call or chat. Discover solutions to your life challenges.
+        </p>
+      </div>
       <div className="col-right">
         <div className="consult-button-section">
           <div className="consult-content">
-            <img src="https://cdn.anytimeastro.com/anytimeastro/puja/prodimg/consult_icon.png" alt="consult_icon" className="consult-icon" />
+            <img
+              src="https://cdn.anytimeastro.com/anytimeastro/puja/prodimg/consult_icon.png"
+              alt="consult_icon"
+              className="consult-icon"
+            />
             <div>
-              <p className="consult-heading">Consult With Expert Astrologers!</p>
-              <p className="consult-description">Seek Personalized Advice from India's Leading, Most Experienced, and Trustworthy Astrologers Online via Call or Message!</p>
+              <p className="consult-heading">
+                Consult With Expert Astrologers!
+              </p>
+              <p className="consult-description">
+                Seek Personalized Advice from India's Leading, Most Experienced,
+                and Trustworthy Astrologers Online via Call or Message!
+              </p>
             </div>
           </div>
           <div className="consult-btn-wrapper">
@@ -169,6 +192,10 @@ const ProductComponent = () => {
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
       <style jsx>{`
 
 
