@@ -12,6 +12,7 @@ const EmailLogin = () => {
       password,
       termsAccepted
     });
+    
   };
 
   return (
@@ -60,24 +61,10 @@ const EmailLogin = () => {
             Signed in with <span className="linkEmail"><a href="loginSignup.html">Mobile</a></span>
           </p>
         </div>
-        <button id="continue-sign-up-btn" onClick={handleSubmit}>Continue</button>
-        <div className="terms-and-resend">
-          <div className="terms-container">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              checked={termsAccepted}
-              onChange={(e) => setTermsAccepted(e.target.checked)}
-            />
-            <label htmlFor="terms">
-              I agree to the <a href="#">terms and conditions</a>
-            </label>
-          </div>
-          <div className="resend-otp"><a href="#">Forgot Password?</a></div>
-        </div>
+        <button id="continue-sign-up-btn" onClick={handleSubmit} >Continue</button>
+      
         <div>
-          <h4 className="dAccount">
+          <h4 className="dAccount" >
             Don't have an account? <span className="linkEmail"><a href="individualSignup.html">Register</a></span>
           </h4>
         </div>

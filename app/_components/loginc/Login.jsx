@@ -5,7 +5,7 @@ const Login = () => {
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState(Array(6).fill(''));
   const [termsAccepted, setTermsAccepted] = useState(true);
-
+  const [sendOtp,setSendOtp]=useState(false);
   const handleOtpChange = (index, value) => {
     const newOtp = [...otp];
     newOtp[index] = value;
@@ -19,7 +19,9 @@ const Login = () => {
       termsAccepted
     });
   };
-
+const handleContinue = ()=>{
+  setSendOtp(!sendOtp);
+}
   return (
     <div className="pop-up-register container" style={{display:'block'}}>
       <div className="pop-up-register-form-div">
@@ -52,7 +54,13 @@ const Login = () => {
             placeholder="+91 6399889123"
             onChange={(e) => setPhone(e.target.value)}
           />
-          <div className="otp-container">
+          
+        </div>
+        
+       
+       {
+           sendOtp && <div> 
+            <div className="otp-container">
             <h4>Enter OTP</h4>
             {otp.map((digit, index) => (
               <input
@@ -64,29 +72,29 @@ const Login = () => {
                 onChange={(e) => handleOtpChange(index, e.target.value)}
               />
             ))}
-          </div>
-        </div>
-        <div className="sEmail">
+          </div> <div className="terms-and-resend">
+           <div className="terms-container">
+             <input
+               type="checkbox"
+               id="terms"
+               name="terms"
+               checked={termsAccepted}
+               onChange={(e) => setTermsAccepted(e.target.checked)}
+             />
+             <label htmlFor="terms">
+               I agree to the <a href="#">terms and conditions</a>
+             </label>
+           </div>
+           <div className="resend-otp"><a href="#">Forgot Password?</a></div>
+         </div>
+          <button id="continue-sign-up-btn" onClick={handleSubmit}>Submit</button></div>
+       }
+      <div className="sEmail">
           <p className="sEmailPara">
             Signed in with <span className="linkEmail"><a href="emailLogin.html">Email</a></span>
           </p>
         </div>
-        <button id="continue-sign-up-btn" onClick={handleSubmit}>Continue</button>
-        <div className="terms-and-resend">
-          <div className="terms-container">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              checked={termsAccepted}
-              onChange={(e) => setTermsAccepted(e.target.checked)}
-            />
-            <label htmlFor="terms" id="lableTerms">
-              I agree to the <a href="#">Terms & Conditions</a>
-            </label>
-            <div className="resend-otp"><a href="#">Resend OTP?</a></div>
-          </div>
-        </div>
+        {!sendOtp && <button id="continue-sign-up-btn" onClick={ handleContinue}>Continue</button>}
         <div>
           <h4 className="dAccount">
             Don't have an account? <span className="linkEmail"><a href="individualSignup.html">Register</a></span>
@@ -190,7 +198,7 @@ const Login = () => {
   .otp-container {
     display: flex;
     /* visibility: hidden; */
-    display: none;
+    // display: none;
    /* margin-left: auto; 
    margin-right: auto; */
     gap: 10px;
@@ -270,7 +278,7 @@ const Login = () => {
     /* visibility: hidden; */
     padding-left: 0;
     padding-right: 0;
-    display: none;
+    // display: none;
   }
 
   header {
