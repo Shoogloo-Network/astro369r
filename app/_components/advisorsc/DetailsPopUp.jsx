@@ -921,7 +921,7 @@ input:checked + .slider:before {
 
 .chatPopUp {
   position: fixed;
-  bottom: 10px;
+  bottom: 30px;
   right: 430px;
   /* left: auto; */
   width: 450px;
@@ -968,7 +968,7 @@ input:checked + .slider:before {
 .details_tab ul li button {
   text-decoration: none;
   border: 1px solid #999;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 6px;
   color: #333;
 
