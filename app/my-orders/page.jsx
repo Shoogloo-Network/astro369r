@@ -2,38 +2,74 @@
 import React ,{useState}from 'react'
 
 const page = () => {
-    const [orders, setOrders] = useState([
-        { id: 1, date: '2024-09-01', orderId: '12345', status: 'Delivered', price: '$99.99', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-        { id: 2, date: '2024-09-02', orderId: '12346', status: 'Cancelled', price: '$55.00', details: 'Praesent ut efficitur sapien. Proin condimentum enim quis quam viverra.' }
-      ]);
-    
-      const [filteredOrders, setFilteredOrders] = useState(orders);
-    
-      const filterOrders = (status) => {
-        console.log(`Filtering orders by status: ${status}`);
-        if (status === 'all') {
-          setFilteredOrders(orders);
-        } else {
-          const filtered = orders.filter(order => order.status.toLowerCase() === status.toLowerCase());
-          setFilteredOrders(filtered);
-        }
-      };
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [orders, setOrders] = useState([
+    { id: 1, date: '2024-09-01', orderId: '12345', status: 'Delivered', price: '$99.99', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { id: 2, date: '2024-09-02', orderId: '12346', status: 'Cancelled', price: '$55.00', details: 'Praesent ut efficitur sapien. Proin condimentum enim quis quam viverra.' },
+    { id: 3, date: '2024-09-01', orderId: '12345', status: 'Delivered', price: '$99.99', details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    { id: 4, date: '2024-09-02', orderId: '12346', status: 'Pending', price: '$55.00', details: 'Praesent ut efficitur sapien. Proin condimentum enim quis quam viverra.' }
+  ]);
+  const [activeOrder, setActiveOrder] = useState(null);
+  const toggleAccordion = (orderId) => {
+    setActiveOrder(activeOrder === orderId ? null : orderId);
+  };
+  const [filteredOrders, setFilteredOrders] = useState(orders);
+const [showDescription , setShowDescription] = useState(false);
+  const filterOrders = (status) => {
+    setActiveFilter(status); // Corrected this line
+    console.log(`Filtering orders by status: ${status}`);
+    if (status === 'all') {
+      setFilteredOrders(orders);
+    } else {
+      const filtered = orders.filter(order => order.status.toLowerCase() === status.toLowerCase());
+      setFilteredOrders(filtered);
+    }
+  };
+
     
       return (
         <div className="container left-section-container">
           <div className="left-section">
             <h2 className="size2">My Orders</h2>
             <div className="filter">
-              <button className="filter-btn txtsize" onClick={() => filterOrders('all')} style={{ backgroundColor: 'rgb(0, 123, 255)', color: '#fff' }}>Order Success</button>
-              <button className="filter-btn txtsize" onClick={() => filterOrders('Cancelled')}>Cancelled Orders</button>
-              <button className="filter-btn txtsize" onClick={() => filterOrders('Delivered')}>Fulfilled Orders</button>
-              <button className="filter-btn txtsize" onClick={() => filterOrders('Pending')}>Pending Orders</button>
-            </div>
+          <button
+            className={`filter-btn txtsize `}
+            onClick={() => filterOrders('all')}
+            style={activeFilter === 'all' ? {backgroundColor: 'rgb(0, 123, 255)',
+              color: '#fff',}:undefined}
+          >
+            Order Success
+          </button>
+          <button
+            className={`filter-btn txtsize`}
+            onClick={() => filterOrders('Cancelled')}
+            style={activeFilter === 'Cancelled' ? {backgroundColor: 'rgb(0, 123, 255)',
+              color: '#fff',}:undefined}
+          >
+            Cancelled Orders
+          </button>
+          <button
+            className={`filter-btn txtsize `}
+            onClick={() => filterOrders('Delivered')}
+            style={activeFilter === 'Delivered' ? {backgroundColor: 'rgb(0, 123, 255)',
+              color: '#fff',}:undefined}
+          >
+            Fulfilled Orders
+          </button>
+          <button
+            className={'filter-btn txtsize'}
+            onClick={() => filterOrders('Pending')}
+            style={activeFilter === 'Pending' ? {backgroundColor: 'rgb(0, 123, 255)',
+              color: '#fff',}:undefined}
+          >
+            Pending Orders
+          </button>
+        </div>
           </div>
     
           <div className="right-section">
             <div className="accordion-header-fixed">
-              <span style={{ visibility: 'hidden' }}><img src="./assets/images/bracelate-tumbnail2.jpg" alt="Astrology Consultation" className="order-image" /></span>
+              <span style={{ visibility: 'hidden' }}><img src="/bracelate-tumbnail2.jpg" alt="Astrology Consultation" className="order-image" /></span>
               <span>Date: </span>
               <span>Order ID: </span>
               <span>Status: </span>
@@ -43,30 +79,35 @@ const page = () => {
             <div className="accordion">
               {filteredOrders.map(order => (
                 <div className="accordion-item" key={order.id} data-order-id={order.id}>
-                  <div className="accordion-header">
-                    <span><img src="./assets/images/bracelate-tumbnail2.jpg" alt="Astrology Consultation" className="order-image" /></span>
+                  <div className="accordion-header"onClick={() => toggleAccordion(order.id)}>
+                    <span><img src="/bracelate-tumbnail2.jpg" alt="Astrology Consultation" className="order-image" /></span>
                     <span>{order.date}</span>
                     <span>{order.orderId}</span>
                     <span className="order-status">{order.status}</span>
                     <span>{order.price}</span>
                     <span className="icon">+</span>
                   </div>
-                  <div className="accordion-content">
-                    <div className="order-items">
-                      <div className="order-item">
-                        <div className="item-info">
-                          <p>{order.details}</p>
-                        </div>
+                  {activeOrder === order.id && (
+                <div className="accordion-content">
+                  <div className="order-items">
+                    <div className="order-item">
+                      <div className="item-info">
+                        <p>{order.details}</p>
                       </div>
                     </div>
                   </div>
+                </div>
+              )}
                 </div>
               ))}
             </div>
           </div>
           <style jsx>{`
        
-
+button .active {
+  background-color: rgb(0, 123, 255);
+  color: #fff;
+}
       
 
 .left-section {
@@ -150,7 +191,7 @@ const page = () => {
 }
 
 .accordion-content {
-    display: none;
+    // display: none;
     padding: 15px;
     background-color: #fafafa;
 }
