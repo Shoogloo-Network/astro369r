@@ -76,7 +76,7 @@ const AstrologerCardDetail = ({cardData , style}) => {
   popUp && <DetailsPopUp popUp={popUpfunc}/>
 }
       {/* Mobile View */}
-      <section class="astrologer-details-mobile container">
+      <section className="astrologer-details-mobile container">
   {cardData?.map((astrologer, index) => (
     // <div key={index} class="astrologer-container-mobile">
     //   <div class="astrologer-image-section-mobile">
@@ -123,7 +123,7 @@ const AstrologerCardDetail = ({cardData , style}) => {
 
 
 
-    <div className="astrologer-container-mobile">
+    <div className="astrologer-container-mobile" key={index}>
   <div className="astrologer-image-section-mobile">
     <div className="astrologer-actions-image-online-mobile">
       <div className="astrologer-actions-online-mobile">

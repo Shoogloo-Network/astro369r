@@ -58,7 +58,7 @@ const TopAstrologers = () => {
           Top Indian Astrologers<Link href="/astrologers">›</Link>
         </h2>
         <Link href="/astrologers" >  <button className="view-specialists-button txtsize">
-          View All Astrologers
+          All Astrologers
           </button></Link>
        </div>
         <div className="apps-grid">

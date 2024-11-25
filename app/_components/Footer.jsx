@@ -6,16 +6,16 @@ const Footer = () => {
   const [email, setEmail] = useState('');
 
   const footerLinks = {
-    company: {
-      title: "Company",
-      links: [
-        { name: "About Us", href: "/about" },
-        { name: "Meet the Team", href: "/team" },
-        { name: "Careers", href: "/careers" },
-        { name: "Press & Media", href: "/press" },
-        { name: "Contact Us", href: "/contact" }
-      ]
-    },
+    // company: {
+    //   title: "Company",
+    //   links: [
+    //     { name: "About Us", href: "/about" },
+    //     { name: "Meet the Team", href: "/team" },
+    //     { name: "Careers", href: "/careers" },
+    //     { name: "Press & Media", href: "/press" },
+    //     { name: "Contact Us", href: "/contact" }
+    //   ]
+    // },
     services: {
       title: "Our Services",
       links: [
@@ -82,7 +82,7 @@ const Footer = () => {
               </div>
             ))}
 
-            <div className="footer-column">
+            <div className="footer-column center">
               <h3 className="footer-title">Newsletter</h3>
               <p className="newsletter-text">
                 Subscribe to our newsletter for daily horoscopes and updates
