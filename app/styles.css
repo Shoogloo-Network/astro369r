@@ -936,7 +936,7 @@ input[type="tel"]:focus {
 /* Astrologer Section Mobile */
 
 .astrologer-details-mobile {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 10px;
     margin: 20px auto;
@@ -1007,7 +1007,7 @@ input[type="tel"]:focus {
 }
 
 .astrologer-container-mobile  {
-    display: flex;
+    display: none;
     flex-direction: column;
    
   
@@ -1238,6 +1238,9 @@ input[type="tel"]:focus {
 
 /* For small mobile devices (max-width: 600px) */
 @media only screen and (max-width: 600px) {
+    .astrologer-container-mobile{
+        display: flex;
+    }
     .articles-section{
         flex-direction: column;
         margin-top: 10px;
@@ -1492,9 +1495,7 @@ input[type="tel"]:focus {
 }
 
 /* Mobile View Styles */
-.mobile-view {
-  display: none;
-}
+
 
 .astrologer-card-mobile {
   border: 1px solid #eee;
@@ -1594,11 +1595,11 @@ input[type="tel"]:focus {
 /* Media Queries */
 @media (max-width: 768px) {
   .desktop-view {
-    display: none;
+    display: none !important;
   }
   
   .mobile-view {
-    display: block;
+    display: block !important;
   }
 }
 

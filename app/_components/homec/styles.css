@@ -50,3 +50,201 @@
   background: none;
   cursor: pointer;
 } 
+
+
+
+/* Astrologer Section Mobile */
+
+.astrologer-details-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.astrologer-image-section-mobile {
+  width: 100%;
+  display: flex;
+ 
+  justify-content: space-between;
+}
+
+.astrologer-image-mobile  {
+  width:64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.availability-dot-mobile  {
+  height: 12px;
+  width: 12px;
+  background-color: green;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: #2d2d32;
+}
+
+.onlineImage-mobile  {
+  display: none;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+
+.availability-section-mobile  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  gap: 2px;
+  margin-left: -16.5px;
+
+}
+
+
+.availability-text-mobile  {
+  color: #616161;
+  margin-left: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.astrologer-name-mobile  {
+  color: #286851;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Tenor Sans, sans-serif;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: .15px;
+  text-transform: capitalize;
+
+}
+
+
+
+
+
+
+
+
+.greeting-mobile  {
+ 
+  color: #424242;
+  font-size: 14px;
+}
+
+.astrologer-rating-mobile  {
+  display: flex;
+  gap: 5px;
+  font-weight: 550;
+  color: #424242;
+  line-height: 24px;
+  letter-spacing: .5px;
+}
+
+.star-rating-mobile  {
+  display: flex;
+  direction: row;
+}
+
+.star-mobile  {
+  font-size: 1rem;
+  color: rgb(250, 175, 0);
+  cursor: pointer;
+  transition: color 0.3s;
+  text-align: left;
+}
+
+.star-mobile :hover,
+.star-mobile :hover~.star-mobile  {
+  color: rgb(250, 175, 0);
+}
+
+
+.astrologer-details-section-mobile  {
+  display: flex;
+}
+
+.detail-item-mobile  {
+  background-color: #ebe2ef;
+  font-weight: 500;
+  color: #7c3a99;
+  line-height: 1;
+  letter-spacing: .5px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: Outfit, sans-serif;
+  padding: 6px 15px;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, 90% 50%, 100% 80%, 100% 100%, 0 100%);
+  font-weight: 700;
+}
+
+
+
+.detail-item2-mobile  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: .5px;
+  color: #212121;
+  text-decoration: line-through;
+}
+
+
+.astrologer-actions-mobile  {
+  display: flex;
+ 
+  margin-top: 4px;
+  justify-content: space-between;
+}
+
+
+
+.call-button-mobile  {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+  color: #757575;
+  cursor: pointer;
+  pointer-events: inherit;
+  font-family: Outfit, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  padding: 12px 30px;
+  border-radius: 6px;
+}
+
+.call-button2-mobile  {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: #286851;
+  border-color: #286851;
+  color: #fff;
+  cursor: pointer;
+  pointer-events: inherit;
+  font-family: Outfit, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  padding: 12px 30px;
+  border-radius: 6px;
+}
+.astrologer-details-mobile{
+  display: none;
+}

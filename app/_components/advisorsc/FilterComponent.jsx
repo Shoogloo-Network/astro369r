@@ -360,7 +360,7 @@ font-weight: 700;
     cursor: pointer;
 }
 .filter-checkbox2{
-    display: none;
+    // display: none;
 }
 
 
@@ -369,7 +369,7 @@ font-weight: 700;
 }
 
 .expertise-right-arrow{
-    display: none;
+    // display: none;
 }
 
 
@@ -384,7 +384,7 @@ font-weight: 700;
 }
 
 .expertise-down-arrow1{
-    display: none;
+    // display: none;
 }
 
 .expertise-right-arrow1{
