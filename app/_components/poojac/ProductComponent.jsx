@@ -1,5 +1,6 @@
+'use client'
 import React, { useState } from 'react';
-
+import Link from 'next/link';
 const productData = {
   title: "Angarak Yog Shanti Puja",
   rating: 4.5,
@@ -95,7 +96,7 @@ const [showDetails, setShowDetails] = useState(true);
 
         <div className="product-actions">
           <button className="btn btn-cart">Add to Cart</button>
-          <button className="btn btn-buy">Book Puja</button>
+          <button className="btn btn-buy"><Link href="/checkout" style={{color:'#fff'}}>Book Puja</Link></button>
         </div>
 
         <div className="pandit-section">
