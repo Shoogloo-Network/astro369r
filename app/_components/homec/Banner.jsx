@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import IconCard from "./IconCard";
 import "../../globals.css";
 import "../../styles.css";
+import Link from "next/link";
 const Banner = ({ cardData }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -16,29 +17,34 @@ const Banner = ({ cardData }) => {
 
   const cards = [
     {
-      image: "/prediction.png",
+      id: 1,
+      icon: "prediction.png",
       title: "Prediction Report",
       description: "Safe and trusted Experts",
-      link: "./prediction-report.html"
-    },
-    {
-      image: "/consult-thumbnail.png",
+      link:'/prediction-report'
+  },
+  {
+      id: 2,
+      icon: "consult-thumbnail.png",
+     
       title: "Instant Video Consultation",
       description: "Connect within 60 secs",
-      link: "./consult.html"
-    },
-    {
-      image: "talk-astrologer-thumbnail.png",
-      title: "Talk to astrologer",
+      link:'/consult'
+  },
+  {
+      id: 3,
+      icon: "talk-astrologer-thumbnail.png",
+      title: "Talk to Astrologer",
       description: "Safe and trusted Experts",
-      link: "./talk-to-astrologer.html"
-    },
-    {
-      image: "chat-thumbnail.png",
+      link:'/talk-to-astrologer'
+  },
+  {
+      id: 4,
+      icon: "chat-thumbnail.png",
       title: "Chat with Astrologer",
       description: "Connect within 60 secs",
-      link: "./chat-with-astrologer.html"
-    }
+      link:'/chat-with-astrologer'
+  }
   ];
 
   return (
@@ -49,7 +55,7 @@ const Banner = ({ cardData }) => {
             <div key={index} className="card1">
               <div className="card-image-container">
                 <a href={card.link}>
-                  <img src={card.image} alt={card.title} className="card-image" />
+                  <img src={card.icon} alt={card.title} className="card-image" />
                 </a>
               </div>
               <div className="card-content">
@@ -66,7 +72,7 @@ const Banner = ({ cardData }) => {
             <div key={index} className="card1">
               <div className="card-image-container">
                 <a href={card.link}>
-                  <img src={card.image} alt={card.title} className="card-image" />
+                  <img src={card.icon} alt={card.title} className="card-image" />
                 </a>
               </div>
               <div className="card-content">
@@ -90,9 +96,9 @@ const Banner = ({ cardData }) => {
                 <p className="white">100% Authentic & Trustworthy Puja Services</p>
                 <h1 className="white">Performed by Experienced Pandits</h1>
                 <h1 className="white">To Attain Relief From Your Problems!</h1>
-                <a href="./pooja.html">
+                <Link href='/pooja'>
                   <button>Book Puja now</button>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

@@ -10,42 +10,42 @@ const ConsultationSection = ({ cardData }) => {
     {
       image: "Astro icons 80x80-01.png",
       title: "Psychic Readings",
-      link:'/services'
+      link:'/services/psychic-readings'
     },
     {
       image: "Astro icons 80x80-02.png",
       title: "Love And Relationships",
-      link:"/services",
+     link:'/services/love-and-relationships'
     },
     {
       image: "Astro icons 80x80-03.png",
       title: "Tarot Readings",
-      link:"/services",
+      link:'/services/tarot-readings'
     },
     {
       image: "Astro icons 80x80-04.png",
       title: "Psychic Mediums",
-      link:null,
+     link:'/services/psychic-mediums'
     },
     {
       image: "Astro icons 80x80-05.png",
       title: "Financial Outlook",
-      link:null,
+     link:'/services/financial-outlook'
     },
     {
       image: "Astro icons 80x80-06.png",
       title: "Life Questions",
-      link:null,
+       link:'/services/life-questions'
     },
     {
       image: "Astro icons 80x80-07.png",
       title: "Spiritual Readings",
-      link:null,
+       link:'/services/spiritual-readings'
     },
     {
       image: "Astro icons 80x80-08.png",
       title: "Astrology Advice",
-      link:null,
+      link:'/services/astrology-advice'
     }
   ];
   return (

@@ -1611,3 +1611,12 @@ input[type="tel"]:focus {
 .hspace1{
     margin-bottom: 40px;
 }
+
+
+
+.top-indian-astrologer-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}

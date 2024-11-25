@@ -4,26 +4,30 @@ export async function GET() {
         id: 1,
         icon: "prediction.png",
         title: "Prediction Report",
-        description: "Safe and trusted Experts"
+        description: "Safe and trusted Experts",
+        link:'/prediction-report'
     },
     {
         id: 2,
         icon: "consult-thumbnail.png",
        
         title: "Instant Video Consultation",
-        description: "Connect within 60 secs"
+        description: "Connect within 60 secs",
+        link:'/consult'
     },
     {
         id: 3,
         icon: "talk-astrologer-thumbnail.png",
         title: "Talk to Astrologer",
-        description: "Safe and trusted Experts"
+        description: "Safe and trusted Experts",
+        link:'/talk-to-astrologer'
     },
     {
         id: 4,
         icon: "chat-thumbnail.png",
         title: "Chat with Astrologer",
-        description: "Connect within 60 secs"
+        description: "Connect within 60 secs",
+        link:'/chat-with-astrologer'
     }
   ];
 

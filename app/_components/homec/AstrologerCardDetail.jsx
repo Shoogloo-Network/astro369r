@@ -19,7 +19,7 @@ const AstrologerCardDetail = ({cardData , style}) => {
         {cardData?.map((astrologer, index) => (
           <div key={index} className="astrologer-container" >
             <div className="astrologer-image-section" onClick={()=>{
-             router.push(`${astrologer?.link}`);
+             router.push(astrologer?.link);
 
             }}>
               <img

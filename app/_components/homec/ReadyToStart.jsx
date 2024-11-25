@@ -15,8 +15,8 @@ const ReadyToStart = () => {
       reviews: "1721",
       price: {
         offer: "5 minutes for $1",
-        regular: "$2.99/min"
-      }
+        regular: "$2.99/min",
+      },link:'/advisors/Cosmic Advice'
     },
     {
         image: "astrologer1.jpg",
@@ -29,7 +29,7 @@ const ReadyToStart = () => {
         price: {
           offer: "5 minutes for $1",
           regular: "$2.99/min"
-        }
+        },link:'/advisors/Cosmic Advice'
       },
       {
         image: "astrologer1.jpg",
@@ -42,7 +42,7 @@ const ReadyToStart = () => {
         price: {
           offer: "5 minutes for $1",
           regular: "$2.99/min"
-        }
+        },link:'/advisors/Cosmic Advice'
       },
       {
         image: "astrologer1.jpg",
@@ -55,7 +55,7 @@ const ReadyToStart = () => {
         price: {
           offer: "5 minutes for $1",
           regular: "$2.99/min"
-        }
+        },link:'/advisors/Cosmic Advice'
       },
     // Duplicate for other astrologers
   ];

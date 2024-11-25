@@ -31,7 +31,7 @@ const ConsultCard = ({consultationCards , slider}) => {
     }}>
     {consultationCards.map((card, index) => (
       <div key={index} className="consultation-card"  style={{width:"150px"}}>
-        <Link href={card.link}>
+        <Link href={card?.link}>
         <img
           src={card.image}
           alt={card.title.toLowerCase()}
@@ -46,13 +46,16 @@ const ConsultCard = ({consultationCards , slider}) => {
     </div> <button className="next" onClick={nextSlide}>❯</button> </div> : <div className="consultation-cards">
     {consultationCards.map((card, index) => (
       <div key={index} className="consultation-card">
+        <Link href={card?.link}>
         <img
           src={card.image}
           alt={card.title.toLowerCase()}
           className="card-image-consultation"
+          style={{margin:'0 auto'}}
         />
         <h2 className="card-title-consultation txtsize">{card.title}</h2>
         <p className="card-action-consultation txtsizesm">CONSULT NOW</p>
+        </Link>
       </div>
     ))}
   </div> )
