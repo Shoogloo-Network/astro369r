@@ -110,14 +110,39 @@ const page = () => {
   <div className="hspace" />
  
  <div  style={{display:'flex'}}>
- <div style={{width:'20%'}}>
+ <div className='advisorList'>
  <AdvisorsList/>
  </div>
- <div  ><AstrologerCardDetail cardData={astrologers} style={style}/></div>
+
+ <div className='advisorDetail' ><AstrologerCardDetail cardData={astrologers} style={style}/></div>
  </div>
   <div className="hspace" />
  {/* <DetailsPopUp/> */}
+ <style jsx>{`
  
+ .advisorList{
+ width:20%;
+ }
+ 
+ @media only screen and (max-width: 600px) {
+ 
+ .advisorList{
+ 
+ display:none;
+ 
+ 
+ }
+
+ .advisorDetail{
+ 
+margin-left:auto;
+margin-right:auto; 
+ 
+ 
+}
+ 
+ }
+ `}</style>
     </div>
   )
 }

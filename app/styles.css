@@ -1240,6 +1240,8 @@ input[type="tel"]:focus {
 @media only screen and (max-width: 600px) {
     .astrologer-container-mobile{
         display: flex;
+        margin-left: 15px;
+        margin-right: 15px;
     }
     .articles-section{
         flex-direction: column;
@@ -1252,6 +1254,7 @@ input[type="tel"]:focus {
     }
     .astrologer-details-mobile{
         display: flex;
+        
     }
      .astrologer-details{
         display: none !important;
