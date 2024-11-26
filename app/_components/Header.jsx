@@ -184,12 +184,12 @@ const Header = () => {
                   <div className="login-hover">
                     <ul>
                       <li id="login">
-                        <Link href="/loginSignup">Login/Signup</Link>
+                        <Link href="/login">Login/Signup</Link>
                       </li>
                       <hr />
                       <li><Link href="/profile">Profile</Link></li>
                       <hr />
-                      <li><Link href="/my-order">My Orders</Link></li>
+                      <li><Link href="/my-orders">My Orders</Link></li>
                       <hr />
                       <li><Link href="/loginSignup">Signout</Link></li>
                     </ul>
