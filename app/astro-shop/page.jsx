@@ -4,12 +4,49 @@ import styles from './astroshop.module.css'
 import '../globals.css'
 import AstroProduct from '../_components/astroshopc/astroproduct.jsx'
 import AstroFilterProduct from '../_components/astroshopc/astroFilterProduct.jsx'
-import AstroShopNav from '../_components/astroshopc/AstroShopNav'
+// import AstroShopNav from '../_components/astroshopc/AstroShopNav'
 
 // Define the categories data with more detailed structure
 const customCategories = [
   {
     id: 1,
+    name: "Jewellery",
+    image: "/jewel_7031284.png",
+    mainCategories: [
+      {
+        name: "Artificial",
+        subCategories: [
+          {
+            name: "Bracelet",
+            items: ["Crystal Bracelet", "Rudraksha Bracelet", "Gemstone Bracelet"]
+          },
+          {
+            name: "Pendant",
+            items: ["Crystal Pendant", "Rudraksha Pendant"]
+          },
+          {
+            name: "Necklace",
+            items: ["Crystal Necklace", "Rudraksha Necklace"]
+          }
+        ]
+      },
+      {
+        name: "Natural",
+        subCategories: [
+          {
+            name: "Bracelet",
+            items: ["Natural Crystal Bracelet", "Natural Rudraksha Bracelet"]
+          },
+          {
+            name: "Pendant",
+            items: ["Natural Crystal Pendant", "Natural Rudraksha Pendant"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
     name: "Jewellery",
     image: "/jewel_7031284.png",
     mainCategories: [

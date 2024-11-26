@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import styles from '../../astro-shop/astroshop.module.css'
-import ProductSlider from './ProductSlider'
+// import ProductSlider from './ProductSlider'
 
 const AstroProduct = ({ categories, products }) => {
   const [activeCategory, setActiveCategory] = useState(null);
@@ -77,8 +77,7 @@ const AstroProduct = ({ categories, products }) => {
         ))}
       </nav>
 
-      <ProductSlider products={products} />
-    </div>
+       </div>
   );
 };
 

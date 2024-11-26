@@ -621,6 +621,8 @@ button:hover {
   .hidden {
       display: block; /* Show sections on desktop */
   }
+
+  
 }
 
 /* Mobile Styles */

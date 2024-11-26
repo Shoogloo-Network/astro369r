@@ -1,61 +1,90 @@
 "use client"
 import React, { useState } from 'react';
 import styles from '../../astro-shop/astroshop.module.css';
-import ProductSlider from './ProductSlider';
+import "../../globals.css";
+import "../../styles.css";
+import CardCrousal from '../homec/CardCrousal';
+// import ProductSlider from './ProductSlider';
 
 // Product data
-const productData = [
-  {
-    id: 1,
-    name: "Money Magnet Bracelet",
-    image: "/sp-dentist@2x.jpg",
-    price: 512,
-    originalPrice: 1999,
-    category: "Bracelet"
-  },
-  {
-    id: 2,
-    name: "Love Attraction Bracelet",
-    image: "/sp-dentist@2x.jpg",
-    price: 512,
-    originalPrice: 1999,
-    category: "Bracelet"
-  },
-  // Add more products...
-];
+
 
 const AstroFilterProduct = () => {
-  const [products, setProducts] = useState(productData);
+  // const [products, setProducts] = useState(productData);
   const [currentSort, setCurrentSort] = useState('popularity');
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const productsPerPage = 8;
 
+  const cards = [
+    {
+      image: "sp-dentist@2x.jpg",
+      title: "Dentist",
+      description: "Teething troubles? Schedule a dental checkup"
+    },
+    {
+      image: "sp-gynecologist@2x.jpg",
+      title: "Gynecologist/Obstetrician",
+      description: "Explore for women's health, pregnancy and infertility treatments"
+    },
+    {
+      image: "sp-dietitian@2x.jpg",
+      title: "Dietitian/Nutrition",
+      description: "Get guidance on eating right, weight management and sports nutrition"
+    },
+    {
+      image: "sp-physiotherapist@2x.jpg",
+      title: "Physiotherapist",
+      description: "Pulled a muscle? Get it treated by a trained physiotherapist"
+    },
+    {
+        image: "sp-physiotherapist@2x.jpg",
+        title: "Physiotherapist",
+        description: "Pulled a muscle? Get it treated by a trained physiotherapist"
+      },
+      {
+        image: "sp-physiotherapist@2x.jpg",
+        title: "Physiotherapist",
+        description: "Pulled a muscle? Get it treated by a trained physiotherapist"
+      },
+      {
+        image: "sp-physiotherapist@2x.jpg",
+        title: "Physiotherapist",
+        description: "Pulled a muscle? Get it treated by a trained physiotherapist"
+      },
+      {
+        image: "sp-physiotherapist@2x.jpg",
+        title: "Physiotherapist",
+        description: "Pulled a muscle? Get it treated by a trained physiotherapist"
+      },
+    // ... add remaining cards
+  ];
+  
   // Sorting function
   const handleSort = (sortType) => {
-    let sortedProducts = [...products];
+    // let sortedProducts = [...products];
     
-    switch (sortType) {
-      case 'Low to High':
-        sortedProducts.sort((a, b) => a.price - b.price);
-        break;
-      case 'High to Low':
-        sortedProducts.sort((a, b) => b.price - a.price);
-        break;
-      case 'Newest First':
-        sortedProducts.sort((a, b) => b.id - a.id);
-        break;
-      default:
-        sortedProducts = [...productData]; // Reset to default order
-    }
+    // switch (sortType) {
+    //   case 'Low to High':
+    //     sortedProducts.sort((a, b) => a.price - b.price);
+    //     break;
+    //   case 'High to Low':
+    //     sortedProducts.sort((a, b) => b.price - a.price);
+    //     break;
+    //   case 'Newest First':
+    //     sortedProducts.sort((a, b) => b.id - a.id);
+    //     break;
+    //   default:
+    //     sortedProducts = [...productData]; 
+    // }
     
-    setProducts(sortedProducts);
+    // setProducts(sortedProducts);
     setCurrentSort(sortType);
   };
 
   // Calculate pagination
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+  // const indexOfLastProduct = currentPage * productsPerPage;
+  // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  // const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
     <div className={styles.astroShopContainer}>
@@ -64,9 +93,9 @@ const AstroFilterProduct = () => {
         <div className={styles.filterHeader}>
           <div>
             <span>Bracelets</span>
-            <span className={styles.productCount}>
+            {/* <span className={styles.productCount}>
               (Showing {indexOfFirstProduct + 1} – {Math.min(indexOfLastProduct, products.length)} of {products.length} products)
-            </span>
+            </span> */}
           </div>
           <div className={styles.sortOptions}>
             <span>Sort By: </span>
@@ -82,12 +111,20 @@ const AstroFilterProduct = () => {
           </div>
         </div>
       </div>
-
+      <section className="appointment-section container">
+      <h1 className="size1">
+        Book an appointment for horoscope and astrology analysis consultation
+      </h1>
+      <p className="txtsize">
+        Find experienced astrologers across all categories
+      </p>
+    <CardCrousal cards={cards} slider={true}/>
+    </section>
       {/* Product Slider */}
-      <ProductSlider products={products} />
+      {/* <ProductSlider products={products} /> */}
 
       {/* Products Grid */}
-      <div className={styles.productsGrid}>
+      {/* <div className={styles.productsGrid}>
         {currentProducts.map((product) => (
           <div key={product.id} className={styles.productCard}>
             <div className={styles.productImage}>
@@ -102,10 +139,11 @@ const AstroFilterProduct = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
+      
 
       {/* Pagination */}
-      <div className={styles.pagination}>
+      {/* <div className={styles.pagination}>
         <button 
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
@@ -121,7 +159,7 @@ const AstroFilterProduct = () => {
         >
           Next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

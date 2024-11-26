@@ -50,7 +50,7 @@
   display: none;
   position: absolute;
   background-color: #fff;
-  left: 24px;
+  left: 0px;
   width: 100px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
@@ -60,7 +60,7 @@
   position: absolute;
   width: 100px;
   background-color: #fff;
-  left: 120px;
+  left: 0px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 
@@ -642,11 +642,12 @@ left: 0;
 background: white;
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 z-index: 100;
+
 }
 
 .subMenu {
 position: absolute;
-left: 100%;
+/* left: 100%; */
 top: 0;
 background: white;
 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -705,6 +706,7 @@ position: relative;
 }
 
 .categoryNav {
+  display: flex;
 position: relative;
 z-index: 100;
 }
@@ -729,8 +731,8 @@ margin-right: 10px;
 
 .mainCategoryMenu {
 position: absolute;
-left: 100%;
-top: 0;
+left: 2%;
+top: 100%;
 background: white;
 box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 min-width: 200px;
