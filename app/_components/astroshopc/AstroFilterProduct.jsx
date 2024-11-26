@@ -111,14 +111,16 @@ const AstroFilterProduct = () => {
           </div>
         </div>
       </div>
-      <section className="appointment-section container">
+      <section className="appointment-section  " style={{margin:'auto'}}>
       <h1 className="size1">
         Book an appointment for horoscope and astrology analysis consultation
       </h1>
       <p className="txtsize">
         Find experienced astrologers across all categories
       </p>
-    <CardCrousal cards={cards} slider={true}/>
+   <div style={{display:'flex',justifyContent:'center'}}>
+   <CardCrousal cards={cards} slider={true}/>
+   </div>
     </section>
       {/* Product Slider */}
       {/* <ProductSlider products={products} /> */}
