@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
+import CountdownTimer from '../timerc/CountdownTimer';
 const productData = {
   title: "Angarak Yog Shanti Puja",
   rating: 4.5,
@@ -58,7 +59,7 @@ const [showDetails, setShowDetails] = useState(true);
       <div  >
       <div className="product-details">
         <div id="timerContainer" className="desktopTimer">
-          <p className="white">Time Remaining : </p><span id="timer"></span>
+          <p className="white">Time Remaining : </p><CountdownTimer initialTime={14400}/>
         </div>
 
         <div className="product-title size1">{productData.title}</div>
