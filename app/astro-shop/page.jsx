@@ -135,7 +135,7 @@ const products = [
 
 const AstroShop = () => {
   return (
-    <div className={styles.desktop} style={{maxWidth:'1269px',margin:'2px 50px'}}>
+    <div className={styles.desktop}>
     
       <AstroProduct 
         categories={customCategories} 
