@@ -91,14 +91,14 @@ const AstroFilterProduct = () => {
       {/* Filter and Sort Section */}
       <div className={styles.filterSection}>
         <div className={styles.filterHeader}>
-          <div>
-            <span>Bracelets</span>
+          <div className={styles.filterHeaderMainDiv}>
+            <h1>Bracelets</h1><span>(Showing 1 – 40 products of 15,083 products)</span>
             {/* <span className={styles.productCount}>
               (Showing {indexOfFirstProduct + 1} – {Math.min(indexOfLastProduct, products.length)} of {products.length} products)
             </span> */}
           </div>
           <div className={styles.sortOptions}>
-            <span>Sort By: </span>
+            <h2 style={{width:'100%'}}>Sort By: </h2>
             {['Popularity', 'Low to High', 'High to Low', 'Newest First'].map((option) => (
               <button
                 key={option}

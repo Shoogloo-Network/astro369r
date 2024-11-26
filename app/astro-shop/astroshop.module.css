@@ -470,18 +470,22 @@ right: 0;
 .filterSection {
 margin-bottom: 30px;
 padding: 15px;
-background: #f8f8f8;
+/* background: #f8f8f8; */
 border-radius: 8px;
 }
 
 .filterHeader {
 display: flex;
+flex-direction: column;
 justify-content: space-between;
 align-items: center;
 flex-wrap: wrap;
 gap: 15px;
 }
-
+.filterHeaderMainDiv{
+  display: flex;
+  gap: 10px;
+}
 .productCount {
 margin-left: 10px;
 color: #666;
@@ -492,6 +496,7 @@ font-size: 0.9em;
 display: flex;
 align-items: center;
 gap: 10px;
+width: 50%;
 }
 
 .sortButton {
@@ -505,12 +510,13 @@ transition: all 0.3s ease;
 }
 
 .sortButton:hover {
-color: #007bff;
+color: #fff;
 }
 
 .sortButton.active {
-color: #007bff;
+color: #fff;
 font-weight: bold;
+background-color: #007bff;
 }
 
 .productsGrid {
@@ -607,7 +613,10 @@ cursor: not-allowed;
 font-weight: bold;
 color: #333;
 }
-
+.desktop{
+  max-width:1269px;
+  margin:2px 50px;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
 .filterHeader {
@@ -615,8 +624,18 @@ color: #333;
   align-items: flex-start;
 }
 
+.desktop{
+  margin: 2px !important;
+}
+/* .filterHeaderMainDiv{
+  flex-direction: row;
+} */
 .sortOptions {
-  flex-wrap: wrap;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  font-size: 14px;
+  gap: 2px;
 }
 
 .productsGrid {
