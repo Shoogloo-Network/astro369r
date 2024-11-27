@@ -47,7 +47,7 @@ const customCategories = [
   },
   {
     id: 2,
-    name: "Jewellery",
+    name: "Gemstone",
     image: "/jewel_7031284.png",
     mainCategories: [
       {

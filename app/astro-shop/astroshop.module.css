@@ -617,6 +617,21 @@ color: #333;
   max-width:1269px;
   margin:2px 50px;
 }
+
+.categoryHeader span::after {
+  content: '➡️'; /* Right arrow */
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.categoryHeader span:hover::after {
+  content: '⬇️'; /* Down arrow */
+}
+
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
 .filterHeader {
