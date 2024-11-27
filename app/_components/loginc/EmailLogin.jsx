@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-
+import Link from 'next/link';
 const EmailLogin = ({getValue}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +23,7 @@ const EmailLogin = ({getValue}) => {
   return (
     <div className="pop-up-register" >
       <div className="pop-up-register-form-div">
-        <h2>Enter Your Details</h2>
+        <h2 className='loginh2'>Enter Your Details</h2>
         <div className="loginOptions">
           <div className="loginOption facebookLogin">
             <a href="">
@@ -72,7 +72,7 @@ const EmailLogin = ({getValue}) => {
       
         <div>
           <h4 className="dAccount" >
-            Don't have an account? <span className="linkEmail"><a href="individualSignup.html">Register</a></span>
+            Don't have an account? <span className="linkEmail"><Link href="/register">Register</Link></span>
           </h4>
         </div>
       </div>
@@ -629,6 +629,13 @@ footer {
     font-weight: 500;
 }
 
+.loginh2{
+text-align: center;
+  margin-bottom: 30px;
+  color: #30343e;
+    font-weight: 500;
+    font-size:24px !important;
+}
 form {
   /* padding: 20px; */
 }

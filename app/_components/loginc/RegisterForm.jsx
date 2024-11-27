@@ -34,7 +34,7 @@ const RegisterForm = (props) => {
           <div className="individualSignupDetails">
             <input
               type="text"
-              id="fullName"
+              id="fname"
               value={formData.fullName}
               placeholder="Enter Your Full Name"
               onChange={handleChange}
@@ -612,6 +612,7 @@ const RegisterForm = (props) => {
         margin-bottom: 30px;
         color: #30343e;
         font-weight: 500;
+        font-size:24px;
       }
       
       form {

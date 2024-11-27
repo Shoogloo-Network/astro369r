@@ -4,7 +4,7 @@ import RegisterForm from '../_components/loginc/RegisterForm'
 const page = () => {
   return (
     <div>
-      <RegisterForm/>
+      <RegisterForm title="Create Your Individual Account"/>
     </div>
   )
 }
