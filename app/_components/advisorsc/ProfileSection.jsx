@@ -31,13 +31,13 @@ const ProfileSection = ({ profile, onAppointmentToggle }) => {
                 <p className="greeting">{profile.specialties.join(' | ')}</p>
                 <p className="greeting">
                   <span>
-                    <i className="fa fa-language" aria-hidden="true" />
+                    <i className="fa fa-language"  />
                     &nbsp;{profile.languages.join(' | ')}
                   </span>
                 </p>
                 <p className="greeting">
                   <span>
-                    <i className="fa-solid fa-map-marker" aria-hidden="true" />{" "}
+                    <i className="fa-solid fa-map-marker"  />{" "}
                     {profile.location}
                   </span>
                 </p>

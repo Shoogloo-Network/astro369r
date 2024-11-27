@@ -70,7 +70,7 @@ const Banner = () => {
                 src="homepage-hero-image-web-v1.png" 
                 alt="woman scrolling mobile" 
                 className="image-slider-hero-image"
-                aria-hidden={currentSlide !== index}
+              
               />
             ))}
           </div>
@@ -80,7 +80,7 @@ const Banner = () => {
                 key={index}
                 className={`image-slider-dot ${currentSlide === index ? 'active' : ''}`}
                 onClick={() => imageSliderCurrentSlide(index)}
-                aria-hidden="true"
+               
               ></span>
             ))}
           </div>

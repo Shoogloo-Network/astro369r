@@ -170,15 +170,15 @@ const Header = () => {
             <div className="menu-container-parent">
               <div className="security-container">
                 <select name="Security" id="Security" className="txtsize">
-                  <option value="" disabled selected hidden>ENG</option>
-                  <option value="DataSecurity" selected>ENG</option>
+                  {/* <option value="" disabled selected hidden>ENG</option> */}
+                  <option value="DataSecurity" defaultValue={true}>ENG</option>
                   <option value="Help">HINDI</option>
                 </select>
               </div>
               
               <div className="user-profile-container" ref={loginMenuRef}>
                 <div className="user-profile" onClick={toggleLoginMenu}>
-                  <i className="fa-solid fa-user"></i>
+                  <i className="fa-solid fa-user" aria-hidden="true"></i>
                 </div>
                 {isLoginMenuOpen && (
                   <div className="login-hover">

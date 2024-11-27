@@ -1,7 +1,7 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const EmailLogin = () => {
+const EmailLogin = ({getValue}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [termsAccepted, setTermsAccepted] = useState(true);
@@ -14,7 +14,12 @@ const EmailLogin = () => {
     });
     
   };
-
+  // const changeState = ()=>{
+  //   getValue(false);
+  // }
+  // useEffect(()=>{
+  //   changeState();
+  // },[])
   return (
     <div className="pop-up-register" >
       <div className="pop-up-register-form-div">
@@ -58,7 +63,9 @@ const EmailLogin = () => {
         </div>
         <div className="sEmail">
           <p className="sEmailPara">
-            Signed in with <span className="linkEmail"><a href="loginSignup.html">Mobile</a></span>
+            Signed in with <span className="linkEmail"><a href='' onClick={()=>{
+              getValue();
+            }}>Mobile</a></span>
           </p>
         </div>
         <button id="continue-sign-up-btn" onClick={handleSubmit} >Continue</button>

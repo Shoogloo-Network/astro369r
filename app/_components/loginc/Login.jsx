@@ -1,7 +1,7 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Login = () => {
+const Login = ({getValue}) => {
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState(Array(6).fill(''));
   const [termsAccepted, setTermsAccepted] = useState(true);
@@ -12,6 +12,15 @@ const Login = () => {
     setOtp(newOtp);
   };
 
+
+
+// const changeState = ()=>{
+//   getValue(false);
+// }
+// useEffect(()=>{
+//   changeState();
+// },[])
+
   const handleSubmit = () => {
     console.log({
       phone,
@@ -21,6 +30,7 @@ const Login = () => {
   };
 const handleContinue = ()=>{
   setSendOtp(!sendOtp);
+  
 }
   return (
     <div className="pop-up-register container" style={{display:'block'}}>
@@ -91,10 +101,12 @@ const handleContinue = ()=>{
        }
       <div className="sEmail">
           <p className="sEmailPara">
-            Signed in with <span className="linkEmail"><a href="emailLogin.html">Email</a></span>
+            Signed in with <span className="linkEmail"><a onClick={()=>{
+              getValue();
+            }}>Email</a></span>
           </p>
         </div>
-        {!sendOtp && <button id="continue-sign-up-btn" onClick={ handleContinue}>Continue</button>}
+        {!sendOtp && <button id="continue-sign-up-btn" onClick={handleContinue}>Continue</button>}
         <div>
           <h4 className="dAccount">
             Don't have an account? <span className="linkEmail"><a href="individualSignup.html">Register</a></span>
@@ -115,6 +127,7 @@ const handleContinue = ()=>{
     left: 0;
     top: 0;
     overflow: hidden;
+    
     /* display: none; */
     /* z-index: 1000; */
   }

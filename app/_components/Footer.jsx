@@ -43,7 +43,7 @@ const Footer = () => {
         { name: "Twitter", href: "https://twitter.com", icon: "fab fa-twitter" },
         { name: "Instagram", href: "https://instagram.com", icon: "fab fa-instagram" },
         { name: "LinkedIn", href: "https://linkedin.com", icon: "fab fa-linkedin-in" },
-        { name: "YouTube", href: "https://youtube.com", icon: "fab fa-youtube" }
+        
       ]
     }
   };
@@ -54,7 +54,7 @@ const Footer = () => {
     // Add your newsletter subscription logic here
     setEmail('');
   };
-
+const currentDate = new Date().getFullYear();
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -63,16 +63,16 @@ const Footer = () => {
             {Object.entries(footerLinks).map(([key, section]) => (
               <div key={key} className="footer-column">
                 <h3 className="footer-title">{section.title}</h3>
-                <ul className="footer-links">
+                <ul className="footer-links" >
                   {section.links.map((link, index) => (
-                    <li key={index}>
+                    <li key={index} >
                       {key === 'connect' ? (
-                        <a href={link.href} target="_blank" rel="noopener noreferrer">
-                          <i className={link.icon} style={{paddingRight: "15px"}}></i>
+                        <Link href={link.href} aria-hidden="true">
+                          {/* <i  style={{paddingRight: "15px"}} />   className={link.icon} */}
                           <span>{link.name}</span>
-                        </a>
+                        </Link>
                       ) : (
-                        <Link href={link.href}>
+                        <Link href={link.href} aria-hidden="true">
                           {link.name}
                         </Link>
                       )}
@@ -107,7 +107,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              &copy; {new Date().getFullYear()} Astro369. All rights reserved.
+              &copy; {currentDate} Astro369. All rights reserved.
             </p>
             <div className="footer-bottom-links">
               <Link href="/terms">Terms</Link>
@@ -118,19 +118,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* <div className="app-badges">
-        <div className="container">
-          <p>Download our mobile app:</p>
-          <div className="badge-container">
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-              <img src="/google-play-badge.png" alt="Get it on Google Play" />
-            </a>
-            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-              <img src="/app-store-badge.png" alt="Download on the App Store" />
-            </a>
-          </div>
-        </div>
-      </div> */}
+      
     </footer>
   );
 };

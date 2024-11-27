@@ -1,7 +1,4 @@
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-config.autoAddCss = false
+
 import Header from './_components/Header'
 import Footer from './_components/Footer'
 import './globals.css'
