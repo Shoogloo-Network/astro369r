@@ -224,17 +224,17 @@ const Header = () => {
           <div className="logo-container">
             <ul>
               <li className={`dropdown ${dropdownStates.advisors ? 'active' : ''}`}>
-                <a href="#" className="dropbtn" onClick={(e) => handleDropdownClick('advisors', e)}>
+                <Link href="/advisors" className="dropbtn" onClick={(e) => handleDropdownClick('advisors', e)}>
                   All Advisors 
                   <span className="icon dropdown-icon">
                     {dropdownStates.advisors ? '▲' : '▼'}
                   </span>
-                </a>
+                </Link>
                 <ul className="dropdown-content">
-                  <li><Link href="#">Name 1</Link></li>
-                  <li><Link href="#">Name 2</Link></li>
-                  <li><Link href="#">Name 3</Link></li>
-                  <li><Link href="#">Name 4</Link></li>
+                  <li><Link href="/advisors/cosmic-advice">Cosmic Advice</Link></li>
+                  <li><Link href="/advisors/cosmic-advice">Cosmic Advice</Link></li>
+                  <li><Link href="/advisors/cosmic-advice">Cosmic Advice</Link></li>
+                  <li><Link href="/advisors/cosmic-advice">Cosmic Advice</Link></li>
                 </ul>
               </li>
               
@@ -255,7 +255,7 @@ const Header = () => {
                 </ul>
               </li>
               
-              <li><Link href="/mart">Mart</Link></li>
+              <li><Link href="/astro-shop">Mart</Link></li>
               <li><Link href="/pooja">Pooja</Link></li>
             </ul>
           </div>
