@@ -11,7 +11,7 @@ import CardCrousal from '../homec/CardCrousal';
 
 const AstroFilterProduct = () => {
   // const [products, setProducts] = useState(productData);
-  const [currentSort, setCurrentSort] = useState('popularity');
+  const [currentSort, setCurrentSort] = useState('Popularity');
   // const [currentPage, setCurrentPage] = useState(1);
   // const productsPerPage = 8;
 
