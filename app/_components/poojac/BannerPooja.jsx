@@ -3,7 +3,26 @@ import React from 'react'
 import styles from '../../pooja.module.css'
 import '../../globals.css';
 import Link from 'next/link';
-const BannerPooja = ({pickIndex}) => {
+const BannerPooja = ({pickIndex,dynamicRoute}) => {
+  function compareStrings(str1, str2) {
+    // Convert strings to lowercase to make the comparison case-insensitive
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    
+    // Split strings into arrays of characters
+    const chars1 = new Set(str1);
+    const chars2 = new Set(str2);
+    
+    // Find the common characters
+    const commonChars = [...chars1].filter(char => chars2.has(char));
+    
+    // Calculate the number of common characters
+    const commonCount = commonChars.length;
+    
+    // Check if the number of common characters is at least 5
+    return commonCount >= 7;
+  }
+  
     const btnName =[{
         title:'Grah Shanti',
         url:'/pooja/grah-shanti',
@@ -35,7 +54,7 @@ const BannerPooja = ({pickIndex}) => {
           
             <Link href={item.url} key={index} >
               {" "}
-              <button className={styles.btnPooja} style={(pickIndex===index ) ? {backgroundColor:'rgb(0, 115, 230)',color:'#fff'}:undefined}>{item.title}</button>
+              <button className={styles.btnPooja} style={( compareStrings(item.title , dynamicRoute)) ? {backgroundColor:'rgb(0, 115, 230)',color:'#fff'}:undefined}>{item.title}</button>
             </Link>
             
         
