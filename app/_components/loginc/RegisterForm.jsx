@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const RegisterForm = (props) => {
@@ -91,7 +92,7 @@ const RegisterForm = (props) => {
         </div>
         <div className="existing-user-login">
           <p className="eu-para">Existing User?</p>
-          <span><a href="loginSignup.html" className="existing-user">Log In</a></span>
+          <span><Link href="/login" className="existing-user">Log In</Link></span>
         </div>
       </div>
       <style jsx>{`
