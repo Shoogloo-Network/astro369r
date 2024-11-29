@@ -96,7 +96,7 @@ const Banner = ({ cardData }) => {
                 <p className="white">100% Authentic & Trustworthy Puja Services</p>
                 <h1 className="white">Performed by Experienced Pandits</h1>
                 <h1 className="white">To Attain Relief From Your Problems!</h1>
-                <Link href='/pooja'>
+                <Link href='/pooja/grah-shanti'>
                   <button>Book Puja now</button>
                 </Link>
               </div>
