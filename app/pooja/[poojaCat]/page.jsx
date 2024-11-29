@@ -15,11 +15,15 @@ const Page = ({ params }) => {
     setIsMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (params) {
-      const { poojaCat } = params;
-      setPoojaCat(poojaCat);
+  useEffect(  () => {
+    async function paramValue(){
+      if (params) {
+        const { poojaCat } = await params;
+        setPoojaCat(poojaCat);
+      }
     }
+    paramValue();
+   
   }, [params]);
 
   const pickIndex = (index) => {
