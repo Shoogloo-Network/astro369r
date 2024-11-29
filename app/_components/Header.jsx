@@ -256,7 +256,7 @@ const Header = () => {
               </li>
               
               <li><Link href="/astro-shop">Mart</Link></li>
-              <li><Link href="/pooja">Pooja</Link></li>
+              <li><Link href="/pooja/grah-shanti">Pooja</Link></li>
             </ul>
           </div>
         </nav>)
