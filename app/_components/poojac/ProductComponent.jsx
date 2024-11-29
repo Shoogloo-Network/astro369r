@@ -133,13 +133,13 @@ const [showDetails, setShowDetails] = useState(true);
             </span>
           </h3>
          {showDetails&& <div className="accordion-content">
-            <div className="puja-details-section">
+            <div className="puja-details-section ">
               <h2 className="puja-title">{productData.title}</h2>
               <p className="puja-description">{productData.details.description}</p>
 
               <div className="puja-details">
                 {Object.entries(productData.details).map(([key, value], index) => (
-                  <div className="detail-item" key={index}>
+                  <div className="detail-item-pooja" key={index}>
                     <span className="detail-label">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>
                     <span className="detail-value">{value}</span>
                   </div>
@@ -806,7 +806,7 @@ width:'100%';
    margin-bottom: 20px;
 }
 
-.detail-item {
+.detail-item-pooja {
    margin-bottom: 10px;
 }
 

@@ -6,6 +6,7 @@ import ContainerPooja from '../../../_components/poojac/ContainerPooja'
 import '../../../globals.css';
 import PoojaProductDetail from '../../../_components/poojac/PoojaProductDetail'
 import ProductComponent from '@/app/_components/poojac/ProductComponent';
+import HomeShimmer from '@/app/_components/homec/HomeShimmer';
 const Page =  () => {
   const [poojaData, setPoojaData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -33,7 +34,7 @@ const Page =  () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <HomeShimmer/>;
   }
 
   return (

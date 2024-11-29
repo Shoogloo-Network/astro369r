@@ -295,7 +295,9 @@ const CheckoutForm = () => {
 /* Checkout Container */
 .checkout-container {
     
-    margin-top: 20px;
+   margin: 20px 0;
+    display: flex;
+    gap: 10px;
 }
 
 /* Left Column: Checkout Form */
@@ -360,9 +362,7 @@ const CheckoutForm = () => {
     padding-bottom: 8px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 72px;
-    right: 50px;
+   
     width: 40%;
 }
 
