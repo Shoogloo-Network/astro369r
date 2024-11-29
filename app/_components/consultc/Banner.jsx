@@ -49,15 +49,15 @@ const Banner = () => {
           <button className="consult-button size2">Consult Now</button>
           <div className="features-list">
             <div className="feature-item">
-              <i className="fa-solid fa-medal"></i>
+              <i className="fa-solid fa-medal" aria-hidden="true"></i>
               <p className="feature-text txtsize">Verified Experts</p>
             </div>
             <div className="feature-item">
-              <i className="fa-solid fa-file-prescription"></i>
+              <i className="fa-solid fa-file-prescription" aria-hidden="true"></i>
               <p className="feature-text txtsize">Hand Written Horoscopes</p>
             </div>
             <div className="feature-item">
-              <i className="fa-solid fa-message"></i>
+              <i className="fa-solid fa-message" aria-hidden="true"></i>
               <p className="feature-text txtsize">Free Followup</p>
             </div>
           </div>

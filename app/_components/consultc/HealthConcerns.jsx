@@ -111,7 +111,7 @@ const healthConcernsData = [
               <p className="card-action-consultation">
                 CONSULT NOW
                 <span className="arrow-icon">
-                  <i className="fa-solid fa-circle-right"></i>
+                  <i className="fa-solid fa-circle-right" aria-hidden="true"></i>
                 </span>
               </p>
             </div>
