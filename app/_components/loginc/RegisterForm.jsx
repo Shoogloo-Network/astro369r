@@ -83,7 +83,7 @@ const RegisterForm = (props) => {
         </form>
         <div className="terms-and-resend">
           <div className="terms-container">
-            <input type="checkbox" id="terms" name="terms" checked />
+            <input type="checkbox" id="terms" name="terms"  />
             <label htmlFor="terms">
               I agree to the <a href="#">Terms & conditions</a>
             </label>

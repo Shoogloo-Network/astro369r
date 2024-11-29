@@ -39,13 +39,13 @@ const handleContinue = ()=>{
         <div className="loginOptions">
           <div className="loginOption facebookLogin">
             <a href="">
-              <img src="/facebook_5968764.png" alt="Facebook" />
+              <img src="/facebook_5968764.png" alt="Facebook" height="30px" width="30px"/>
             </a>
             <p>Facebook</p>
           </div>
           <div className="loginOption googleLogin">
             <a href="">
-              <img src="/google_13170545.png" alt="Google" />
+              <img src="/google_13170545.png" alt="Google" height="30px" width="30px" />
             </a>
             <p>Google</p>
           </div>
@@ -467,15 +467,19 @@ hr {
   .loginOptions {
     display: flex;
     justify-content: space-around;
+   
     margin-top: 20px;
     }
     
     .loginOption {
+    display: flex;
+    flex-direction:column;
     text-align: center;
     color: #67717e;
     font-weight: 400;
     font-size: 14px;
     padding-bottom: 12px;
+     align-items:center;
     }
 .emailLogin img {
 /* Specific styles for email login */
