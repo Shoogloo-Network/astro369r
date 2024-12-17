@@ -173,6 +173,7 @@ const CheckoutForm = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name='phone'
                     placeholder="Enter your phone number"
                     className="phcheckout"
                     required
@@ -187,6 +188,7 @@ const CheckoutForm = () => {
                 <input
                   type="text"
                   id="city"
+                  name='phone'
                   placeholder="Enter your city"
                   required
                   value={city}
@@ -272,7 +274,7 @@ const CheckoutForm = () => {
             ))
            }
           </div>
-<button>Make Payment</button>
+<button onClick={handleSubmit}>Make Payment</button>
           <div className="form-group notFormGroup termsGroup" style={{display:'flex',gap:'10px'}}>
             <input
               type="checkbox"
